@@ -1,0 +1,211 @@
+/* vertical nav */
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+    margin: 0px;
+  }
+  .sidebar-nav .navbar ul:not {
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+  	padding: 8px 16px;
+  }
+  .sidebar-nav .navbar-header
+  {
+  	clear: both;
+	float: none;
+  }
+
+  .sidebar-nav .navbar li.dropdown ul.dropdown-menu
+  {
+  	/*
+  	top: 0px;
+	left: 100%;
+	z-index: 50;
+	*/
+	position: relative;
+  }
+
+@media (min-width: 768px) {
+}
+
+/* slideout navs */
+.nav-trigger
+{
+	position: absolute;
+	clip: rect(0,0,0,0);
+}
+label[for='leftnav-trigger'], label[for='rightnav-trigger']
+{
+	margin: 0px;
+	position: absolute; /* fixed */
+	top: 0px;
+	z-index: 2;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	background-size: contain;
+}
+label[for='leftnav-trigger']
+{
+	left: 0px;
+}
+label[for='rightnav-trigger']
+{
+	right: 0px;
+	min-width: 46px;
+	min-height: 42px;
+}
+
+label[for='rightnav-trigger'], #rightnav
+{
+	top: 100px;
+}
+
+
+.slidenav
+{
+	list-style: none;
+	background: #111;
+	width: 200px;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 50;
+	overflow-y: auto;
+	/* this puts in a scrollbar if too long, but accidentally hides main side drop menu....
+	*/
+}
+
+#rightnav
+{
+	background-color: #EEE;
+	border: solid #999 2px;
+	padding: 5px;
+	overflow-x: hidden;
+}
+
+.slidenav-left
+{
+	left: -200px;
+}
+.slidenav-right
+{
+	right: -200px;
+}
+
+#main_wrapper
+{
+	min-width: 100%;
+	min-height: 100%;
+	background-color: #fff;
+	position: relative;
+	top: 0;
+	bottom: 100%;
+	left: 0;
+	z-index: 1;
+	/*padding: 2em;*/
+}
+
+
+#leftnav-trigger:checked ~ #body_wrapper > label[for=leftnav-trigger] 
+{
+	left: 200px;
+	margin-left: -40px;
+	z-index: 51;
+}
+#rightnav-trigger:checked ~ #body_wrapper > label[for=rightnav-trigger]
+{
+	right: 200px;
+}
+
+.nav-trigger.push:checked ~ #body_wrapper > #main_wrapper
+{
+	left: 200px;
+	/*box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);*/
+}
+#leftnav-trigger:checked ~ #body_wrapper > .slidenav-left
+{
+	left: 0px;
+}
+#rightnav-trigger:checked ~ #body_wrapper > .slidenav-right
+{
+	right: 0px;
+}
+
+label[for=leftnav-trigger], .slidenav-left, #main_wrapper
+{
+	transition: left 0.2s;
+}
+label[for=rightnav-trigger], .slidenav-right
+{
+	transition: right 0.2s;
+}
+
+.nav-trigger.push:checked ~ #body_wrapper > #main_wrapper #main {
+	/* disable centering when leftbar open, so no giant gap */
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+
+
+body
+{
+	overflow-x: hidden;
+}
+
+/* Fix Android */
+body { 
+  -webkit-animation: bugfix infinite 1s; 
+}
+@-webkit-keyframes bugfix { 
+  from {padding:0;} 
+  to {padding:0;} 
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, 
+.navbar-inverse .navbar-nav > li > a:focus
+{
+	background-color: #666;
+}
+.navbar-inverse .navbar-nav a:hover
+{
+	text-decoration: underline;
+}
+.navbar-inverse .navbar-nav .dropdown-menu a:hover
+{
+	background-color: #ccc;
+}
+
+	body #main #navbar  .collapse.in .nav .dropdown > a,
+	.navbar .collapse.in .nav .dropdown > a
+	{
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+	
+	.navbar .collapse.in .nav .dropdown
+	{
+		position: relative;
+		z-index: 500;
+	}
+
+	.navbar .collapse.in .nav .dropdown-menu
+	{
+		position: relative;
+		top: 0;
+		float: none;
+		z-index: 0;
+	}
+	.navbar .collapse.in .nav .dropdown-menu > li
+	{
+		margin-left: 2em; 
+	}

@@ -1,0 +1,122 @@
+body
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+/* Reset fonts in case inside fontified container */
+.tip, .add_button, .button, .sortable_link
+{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.font8 { font-size: 8px; }
+.font10 { font-size: 10px; }
+.font12 { font-size: 12px; }
+.font14{ font-size: 14px; }
+.font15{ font-size: 15px; }
+.font16 { font-size: 16px; }
+.font17 { font-size: 17px; }
+.font18 { font-size: 18px; }
+.font20 { font-size: 20px; }
+.font22 { font-size: 22px; }
+.font24 { font-size: 24px; }
+.font26 { font-size: 26px; }
+.font28 { font-size: 28px; }
+.font30 { font-size: 30px; }
+.font32 { font-size: 32px; }
+.font36 { font-size: 36px; }
+.font42 { font-size: 42px; }
+.font48 { font-size: 48px; }
+.font64 { font-size: 64px; }
+
+.font8i { font-size: 8px !important; }
+.font10i { font-size: 10px !important; }
+.font12i { font-size: 12px !important; }
+.font14i{ font-size: 14px !important; }
+.font15i{ font-size: 15px !important; }
+.font16i { font-size: 16px !important; }
+.font17i { font-size: 17px !important; }
+.font18i { font-size: 18px !important; }
+.font20i { font-size: 20px !important; }
+.font22i { font-size: 22px !important; }
+.font24i { font-size: 24px !important; }
+.font26i { font-size: 26px !important; }
+.font28i { font-size: 28px !important; }
+.font30i { font-size: 30px !important; }
+.font32i { font-size: 32px !important; }
+
+.font1em { font-size: 1em; }
+.font1p1em { font-size: 1.1em; }
+.font1p25em { font-size: 1.25em; }
+.font1p5em { font-size: 1.5em; }
+.font1p75em { font-size: 1.75em; }
+.font2em { font-size: 2.0em; }
+.font2p5em { font-size: 2.5em; }
+.font3em { font-size: 3.0em; }
+.font4em { font-size: 4.0em; }
+.font5em { font-size: 5.0em; }
+
+/* relative font stuff - so declaring default font sizes make sense */
+.smallest { font-size: 0.6em; }
+.smaller { font-size: 0.75em; } /* font12 */
+.small { font-size: 0.9em; } /* was font14 */
+.medium { font-size: 1.2em; } /* font18 */
+.large { font-size: 1.4em; }
+.larger { font-size: 1.75em; }
+.largest { font-size: 2em; }
+
+.line200,.line_double,.doubleline,.double,.doublespacing,.lineheight200 { line-height: 200% !important; }
+.line150,.single_half,.lineheight150,.oneandhalfspacing { line-height: 150% !important; }
+.line125,.line_normal,.singleline,.single,.singlespacing,.lineheight125 { line-height: 125% !important; }
+.line100 { line-height: 100% !important; }
+.double li { line-height: 125%; margin-top: 0.5em; }
+ul.spaced li, ol.spaced li { margin-top: 0.5em; }
+
+h1,h2,h3,h4,h5,h6 { margin: 0px !important; padding-bottom: 0.25em; padding-top: 0.25em; }
+h1 { padding-bottom: 0.125em; }
+
+html { font-size: 16px; }
+
+body h1, .h1, body h1 input { font-size: 2.1em; font-weight: bold; }
+body h2, .h2, body h2 input { font-size: 1.8em; font-weight: bold; }
+body h3, .h3, body h3 input { font-size: 1.4em; font-weight: bold; }
+body h4, .h4, body h4 input { font-size: 1.15em; }
+body h5, .h5, body h5 input { font-size: 0.9em; }
+body h6, .h6, body h6 input { font-size: 0.75em; }
+
+/* RESPONSIVE FONT ADJUSTMENTS */
+@media (max-width: 767px)
+{
+}
+
+
+.smallcaps
+{
+	font-variant: small-caps;
+}
+
+.caps, .uppercase
+{
+	text-transform: uppercase;
+}
+.capitalize
+{
+	text-transform: capitalize;
+}
+
+/* now un-style all these things, so content font doesnt take over */
+#admin .add_button,
+#admin .regular,
+#admin .sortable_link,
+#admin .publish_filters,
+#admin .controls,
+#admin .tip
+{
+	font-family: Arial, Helvetica, sans-serif !important;
+
+}
+input[type=text], textarea
+{
+	font-family: inherit;
+}

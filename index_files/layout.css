@@ -1,0 +1,256 @@
+/* SHARED/UNIVERSAL basic sanity to templates */
+body#admin
+{
+}
+
+#main
+{
+	/*padding: 0px;*/
+}
+#header { 
+	padding: 1em 2em 1em 2em;
+
+}
+#main a:hover
+{
+	text-decoration: underline;
+}
+#header h1 a:hover
+{
+	text-decoration: none;
+}
+
+
+#main .nav .dropdown-menu
+{
+	padding: 0px;
+}
+
+#main .nav .dropdown-menu a
+{
+	padding: 10px;
+}
+
+#main_content
+{
+	padding: 0 2em;
+}
+
+#main_content div.view,
+#main_content div.index,
+#main_content div.form
+{
+	padding: 1em;
+}
+#main_content .row
+{
+	/*margin: 0;*/
+}
+
+#main .widget h3
+{
+	padding: 0.5em;
+	margin: 0px;
+	white-space: nowrap;
+}
+
+#main .widget > div
+{
+	padding: 1em;
+}
+
+label[for=rightnav-trigger]
+{
+	width: auto;
+	height: auto;
+}
+
+#rightnav-trigger:checked ~ #body_wrapper > label[for=rightnav-trigger] 
+{
+	right: 450px;
+}
+
+#rightnav
+{
+	width: 450px;
+	right: -450px;
+	height: auto;
+	border: none;
+	background: none;
+	padding: 0px;
+}
+#body_wrapper #rightnav > *
+{
+	margin: 0px;
+}
+#rightnav .tab-content
+{
+	border: solid #666 2px;
+	border-radius: 0px 5px 5px 5px;
+	padding: 15px;
+}
+#rightnav .nav-tabs
+{
+	position: relative;
+	top: 2px;
+}
+#rightnav .nav-tabs > li a
+{
+	background-color: #eee;
+}
+#rightnav .nav-tabs > li > a
+{
+	border: solid #666 2px;
+	border-radius: 5px 5px 0 0;
+}
+label[for=rightnav-trigger] > .btn
+{
+	border: solid #666 2px;
+	border-radius: 5px;
+}
+
+#rightnav .tab-content,
+#rightnav .nav-tabs > li.active a
+{
+	background-color: white;
+}
+#rightnav .nav-tabs > li.active > a
+{
+	border-bottom: solid white 1px;
+}
+
+#rightnav .nav-tabs > li.active
+{
+	font-weight: bold;
+
+}
+
+
+#rightnav, label[for=rightnav-trigger]
+{
+	top: 75px;
+}
+label[for=rightnav-trigger]
+{
+	margin-top: 50px;
+}
+
+#rightnav > *
+{
+	margin: 10px;
+}
+
+/*
+#rightnav a.btn
+{
+	display: block;
+}
+*/
+
+#login
+{
+	z-index: 500;
+}
+
+/*
+#page_title_row > div
+{
+	padding: 1em;
+}
+*/
+
+#main_content #updates.row
+{
+	/*margin-top: 25px;*/
+}
+#subheader .social-icons
+{
+	text-align: right;
+}
+
+ul,ol
+{
+	padding-left: 20px;
+}
+
+#footer
+{
+	padding: 25px;
+}
+
+#notices > *
+{
+	margin: 0px;
+	padding-left: 75px;
+}
+#notices a
+{
+	text-decoration: underline;
+	font-weight: bold;
+}
+#notices a.btn
+{
+	text-decoration: none;
+}
+
+.widget .PagePhoto img
+{
+	width: 100%;
+}
+
+/* fix for complex feedback */
+.has-feedback .input-group .form-control
+{
+	padding-right: 1%;
+}
+
+.has-feedback .input-group
+{
+	padding-right: 42.5px;
+}
+
+#admin #main
+{
+	/* padding: 2em;*/
+}
+
+#SiteDesignLogo 
+{
+	position: relative;
+}
+#SiteDesignLogo .controls
+{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 5;
+}
+
+body h1
+{
+	margin: 0px 10px;
+}
+
+input[type=text], input[type=number], input[type=password], textarea
+{
+/* background-color: #eee; */
+	border: solid #ccc 1px;
+}
+
+div.form
+{
+	border: solid #ccc 1px;
+	padding: 25px;
+	border-radius: 5px;
+}
+
+.header-logo
+{
+	padding-right: 25px;
+}
+
+.header-subtitle
+{
+	font-weight: bold;
+	font-size: 1.2em;
+}

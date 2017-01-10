@@ -1,0 +1,5 @@
+form.thinner div.form-group,
+form.condensed div.form-group
+{
+	margin-bottom: 0px;
+}

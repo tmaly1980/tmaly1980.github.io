@@ -1,0 +1,397 @@
+.tagselect .btn-text
+{
+	min-width: 150px;
+	text-align: left;
+}
+
+.tagselect ul
+{
+	max-height: 200px;
+	overflow-y: scroll;
+	overflow-x: auto;
+}
+.tagselect-container 
+{
+	margin: 5px 0px;
+}
+
+.tip
+{
+	color: #666;
+	font-style: italic;
+	font-size: 0.9em;
+}
+
+.form-group
+{
+	margin-bottom: 10px;
+}
+
+/* Loading spinner */
+.loading
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 5000;
+	top: 0;
+	left: 0;
+}
+.loading div.background
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #CCC;
+	opacity: 0.1;
+	z-index: 5000;
+	top: 0;
+	left: 0;
+}
+
+.loading button.btn
+{
+	position: absolute;
+	font-size: 4em;
+	left: 50%;
+	top: 50%;
+	margin-left: -0.75em;
+	margin-top: -0.75em;
+	z-index: 5001;
+	border-radius: 5px;
+	line-height: 1.0;
+	padding: 0.25em;
+}
+
+.loading i.fa-spinner
+{
+
+}
+
+.spinner {
+    -animation: spin 1s infinite linear;
+    -webkit-animation: spin2 1s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+body .page-header
+{
+	margin-top: 0px;
+}
+
+/* corrections to form-validator css */
+.form-group.col-xs-1 .form-control-feedback, .form-group.col-sm-1 .form-control-feedback, .form-group.col-md-1 .form-control-feedback, .form-group.col-lg-1 .form-control-feedback, .form-group.col-xs-2 .form-control-feedback, .form-group.col-sm-2 .form-control-feedback, .form-group.col-md-2 .form-control-feedback, .form-group.col-lg-2 .form-control-feedback, .form-group.col-xs-3 .form-control-feedback, .form-group.col-sm-3 .form-control-feedback, .form-group.col-md-3 .form-control-feedback, .form-group.col-lg-3 .form-control-feedback, .form-group.col-xs-4 .form-control-feedback, .form-group.col-sm-4 .form-control-feedback, .form-group.col-md-4 .form-control-feedback, .form-group.col-lg-4 .form-control-feedback, .form-group.col-xs-5 .form-control-feedback, .form-group.col-sm-5 .form-control-feedback, .form-group.col-md-5 .form-control-feedback, .form-group.col-lg-5 .form-control-feedback, .form-group.col-xs-6 .form-control-feedback, .form-group.col-sm-6 .form-control-feedback, .form-group.col-md-6 .form-control-feedback, .form-group.col-lg-6 .form-control-feedback, .form-group.col-xs-7 .form-control-feedback, .form-group.col-sm-7 .form-control-feedback, .form-group.col-md-7 .form-control-feedback, .form-group.col-lg-7 .form-control-feedback, .form-group.col-xs-8 .form-control-feedback, .form-group.col-sm-8 .form-control-feedback, .form-group.col-md-8 .form-control-feedback, .form-group.col-lg-8 .form-control-feedback, .form-group.col-xs-9 .form-control-feedback, .form-group.col-sm-9 .form-control-feedback, .form-group.col-md-9 .form-control-feedback, .form-group.col-lg-9 .form-control-feedback, .form-group.col-xs-10 .form-control-feedback, .form-group.col-sm-10 .form-control-feedback, .form-group.col-md-10 .form-control-feedback, .form-group.col-lg-10 .form-control-feedback, .form-group.col-xs-11 .form-control-feedback, .form-group.col-sm-11 .form-control-feedback, .form-group.col-md-11 .form-control-feedback, .form-group.col-lg-11 .form-control-feedback, .form-group.col-xs-12 .form-control-feedback, .form-group.col-sm-12 .form-control-feedback, .form-group.col-md-12 .form-control-feedback, .form-group.col-lg-12  .form-control-feedback
+{
+	margin-right: 15px;
+	/*top: 32px;*/
+}
+body .has-feedback label ~ .form-control-feedback
+{
+	top: 33px;
+}
+body .has-feedback label 
+{
+	position: relative;
+}
+
+
+body .has-feedback label ~ .form-control-feedback
+{
+}
+
+.has-feedback .form-control
+{
+	padding-right: 1%;
+}
+
+form legend
+{
+}
+
+.has-error .form-control,
+.has-error fieldset
+{
+	border: solid 1px #a94442;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+.has-feedback .input-group,
+.has-feedback legend
+{
+	padding-right: 42.5px;
+}
+
+/* dropdown hacks; desktop will hover to subnav; mobile will have to click to see on next page */
+.dropdown:hover .dropdown-menu
+{
+	display: block;
+}
+.dropdown.toggle:hover .dropdown-menu /* click toggle only */
+{
+	display: none;
+}
+
+.alert
+{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.nodata
+{
+	font-style: italic;
+	color: #999;
+	font-weight: bold;
+}
+	
+
+
+.icons-only span.text
+{
+	display: none;
+}
+
+
+.btn
+{
+	font-weight: normal !important; /* bold is ugly */
+}
+
+.PagePhoto .controls,
+.Photo .controls
+{
+	visibility: hidden;
+}
+
+.PagePhoto:hover .controls,
+.Photo:hover .controls,
+.PagePhoto:focus .controls,
+.Photo:focus .controls
+{
+	visibility: visible;
+}
+
+.input-group .form-control[size],
+.input-group .form-control[maxlength],
+.form-group .form-control[size],
+.form-group .form-control[maxlength]
+{
+	width: auto;
+	padding-right:1%;
+}
+
+body .widget
+{
+	margin: 5px;
+}
+
+.widget img
+{
+	width: 100%;
+}
+
+img.shadow
+{
+	-webkit-box-shadow: 4px 4px 5px #ccc;
+	-moz-box-shadow: 4px 4px 5px #ccc;
+	-ms-box-shadow: 4px 4px 5px #ccc;
+	-o-box-shadow: 4px 4px 5px #ccc;
+	box-shadow: 4px 4px 5px #ccc;
+	border: solid 1px #ccc;
+}
+
+body.admin #page_title_row
+{
+	padding: 5px 10px 0px 10px;
+	border-bottom: solid #CCC 5px;
+}
+body.admin .page-header
+{
+	border-bottom: none;
+	margin: 0px;
+}
+body.admin #page_title
+{
+	font-weight: bold;
+}
+
+.alert-info.dashed
+{
+	border: dashed #20749E 1px;
+}
+
+body a
+{
+	text-decoration: underline;
+}
+
+.nav a, a.btn,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
+{
+	text-decoration: none;
+}
+
+.header-logo-col, .header-title-col /* header-right-col takes up as much space as it needs, others are minimal but refuse to wrap */
+{
+	width: 1px;
+	white-space: nowrap;
+}
+
+.header-table
+{
+	display: table;
+}
+
+.header-row 
+{
+	display: table-row;
+}
+.header-row > *
+{
+	display: block; /* for mobile, stack */
+}
+.header-row .header-logo-col
+{
+	float: left;
+}
+@media (min-width: 768px) {
+	.header-row .header-logo-col
+	{
+		float: none;
+	}
+	.header-row > *
+	{
+		display: table-cell;
+	}
+}
+
+@media (max-width: 767px) {
+	.header-logo-col, .header-title-col /* wrap  better */
+	{
+		width: auto;
+		white-space: normal;
+	}
+	.header-logo img
+	{
+		max-height: 100px;
+	}
+	
+	#header .header-logo-col + .header-title-col h1
+	{
+	        font-size: 2em; /* smaller?*/
+	}
+
+
+}
+
+.header-title-col
+{
+	vertical-align: middle;
+}
+
+.header-right-col
+{
+	vertical-align: top;
+	text-align: right;
+}
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.row-centered > .col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+#footer
+{
+	text-align: center;
+}
+
+.widget .item
+{
+	float: left;
+	max-width: 250px;
+	padding-top: 25px;
+}
+.widget .item:first-child
+{
+	padding-top: 0px;
+}
+.widget .item.wide
+{
+	float: none;
+	max-width: none;
+	clear: both;
+}
+
+.widget .item.wide > .item_details
+{
+	overflow: hidden;
+}
+
+.widget .item .PagePhoto
+{
+	max-width: 250px;
+}
+
+.widget .item.wide .PagePhoto
+{
+	float: left;
+}
+
+@media (min-width: 768px) {
+	.widget .item.wide > *
+	{
+		/*float: left;*/
+	}
+	.widget .item.wide .PagePhoto
+	{
+	/*	max-width: 250px;*/
+	}
+}
+
+.widget h3
+{
+	padding: 0.25em;
+}
+
+.ui-sortable
+{
+	position: inherit;
+}
+
+/* fix calendar input-group */
+.input-group .form-control
+{
+	display: table-cell;
+}
+.input-group .input-group-addon
+{
+	top: 0px;
+	width: auto;
+}
+
+body .dropdown-menu
+{
+	margin: 0px;
+}
+
+.lightbox:hover
+{
+	cursor: zoom-in;
+}

@@ -1,0 +1,15 @@
+.editable input
+{
+	margin-right: 1em;
+	
+}
+
+.editable button
+{
+	font-size: 14px;
+	font-weight: normal;
+}
+.editable textarea
+{
+	min-height: 100px;
+}

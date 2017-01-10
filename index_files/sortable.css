@@ -1,0 +1,20 @@
+.sorting .ui-sortable-handle
+{
+	border: dashed 1px #999;
+	/*margin: 3px;*/
+	background-color: #EEE;
+	cursor: move;
+}
+
+.sorting .ui-sortable-placeholder /*, .sorting .ui-sortable-handle:hover*/
+{
+	background-color: yellow;
+	visibility: visible !important;
+}
+
+.sorting a.disabled
+{
+	text-decoration: none;
+	cursor: move;
+	color: #666;
+}

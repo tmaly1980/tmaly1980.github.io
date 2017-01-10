@@ -1,0 +1,168 @@
+/* DOESNT REALLY WORK, :before has zero height and pattern doesnt stretch with angle
+.rotatedbg_container()
+{
+	position: relative;
+	overflow: hidden;
+}
+
+.rotatedbg_before(@deg, @url, @color)
+{
+	content: "";
+	position: absolute;
+	width: 200%;
+	height: 200%;
+	top: -50%;
+	left: -50%;
+	z-index: -1;
+
+	transform: rotate(@deg);
+	-moz-transform: rotate(@deg);
+	-webkit-transform: rotate(@deg);
+	-ms-transform: rotate(@deg);
+	-o-transform: rotate(@deg);
+
+	background: @color url(@url) 0 0 repeat;
+
+}
+*/
+/* centered content effect, with colors stretching 100% */
+#main {
+  /*
+	@media (min-width: 998px)
+	{
+		width: 960px;
+	}
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+	*/
+}
+body#www .navbar {
+  margin-bottom: 0px;
+}
+#main a:not(.btn) {
+  color: #1e3eff;
+}
+#main .navbar-inverse a {
+  color: white;
+}
+#main h1 {
+  color: #324864;
+}
+#main .widget h3 {
+  margin: 0;
+  padding: 0.5em 1em ;
+}
+#main_wrapper {
+  padding: 0;
+  /*background: @bg1 svg-gradient(to bottom, @bg1, @bg2);*/
+  background: url("/images/textures/strange-bullseyes.png") #cccccc;
+}
+#main #header {
+  position: relative;
+  padding: 0px;
+  padding: 1em 0em;
+}
+#header .title-box {
+  display: table-cell;
+}
+#header .header-title {
+  display: inline-block;
+  vertical-align: bottom;
+}
+#header .header-subtitle {
+  display: inline-block;
+  vertical-align: bottom;
+}
+#main #header .subtitle {
+  padding-left: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+#main #header .right-text {
+  position: relative;
+}
+#main #header .social-icons {
+  float: right;
+}
+#main #header .social-icons a h1 {
+  font-size: 36px;
+}
+#main .widget h3,
+#main #navbar {
+  background: #4b6d97 url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%234b6d97%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23324864%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  border: solid 1px #293c53;
+}
+#main #navbar a {
+  font-size: 0.9em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+#main .widget {
+  margin: 0.25em;
+}
+#main #main_content {
+  padding: 0px;
+}
+#main #main_content #titled_content,
+#main #main_content .widget {
+  background-color: white;
+  border: solid #ccc 1px;
+  border-radius: 5px;
+}
+#main #main_content #titled_content,
+#main #main_content .widget > div {
+  padding: 1em 2em;
+}
+h2.page-header {
+  border-bottom: dashed #aaa 1px;
+}
+#main #main_content .btn {
+  /*border-color: @color1darker2;
+	background-color: @color1darker;
+	*/
+  /*
+	color: contrast(@color1);
+	*/
+}
+#main a.btn:hover {
+  text-decoration: none;
+  /*
+	background-color: @color1lighter;
+	*/
+}
+#main_screenshot {
+  border: solid #CCC 2px;
+  box-shadow: 5px 5px 5px #666;
+  width: 350px;
+  border-radius: 3px;
+}
+.navbar-brand > img {
+  float: left;
+  padding-right: 10px;
+}
+body {
+  margin-top: 50px;
+}
+#home_intro {
+  position: relative;
+  width: 100%;
+}
+#home_intro > img {
+  width: 100%;
+}
+#home_intro > div {
+  margin: 5%;
+}
+@media (min-width: 998px) {
+  #home_intro > div {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
+  }
+}
+.gradientbg {
+  background: #aab7ce url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23aab7ce%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23ffffff%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+}

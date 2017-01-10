@@ -1,0 +1,34 @@
+.item.mime
+{
+	padding-left: 40px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-image: url("/core/images/icons/mime/generic.png"); 
+}
+.mime.application { background-image: url("/core/images/icons/mime/application.png"); }
+/* TODO XXX fix generic as well as application */
+
+.mime.image { background-image: url("/core/images/icons/mime/image.png"); }
+.mime.text { background-image: url("/core/images/icons/mime/text.png"); }
+
+.mime.application.application_zip,
+.mime.application.application_gzip,
+.mime.application.application_tar,
+.mime.application.application_x_tar,
+.mime.application.application_x_rar_compressed 
+	{ background-image: url("/core/images/icons/mime/zip.png"); }
+
+.mime.audio { background-image: url("/core/images/icons/mime/audio.png"); }
+.mime.video { background-image: url("/core/images/icons/mime/video.png"); }
+
+.mime.application.application_pdf { background-image: url("/core/images/icons/mime/pdf.png"); }
+
+.mime.application.application_msword,
+.mime.application_vnd_oasis_opendocument_text
+	{ background-image: url("/core/images/icons/mime/word.png"); }
+
+.mime.application.application_vnd_ms_excel,
+.mime.application_vnd_oasis_opendocument_spreadsheet
+	{ background-image: url("/core/images/icons/mime/excel.png"); }
+
+.mime.application.application_octet_stream { background-image: url("/core/images/icons/mime/binary.png"); }
