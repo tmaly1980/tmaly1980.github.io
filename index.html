@@ -1,571 +1,555 @@
 <!DOCTYPE html>
-<!-- saved from url=(0033)http://portal.dev/pages/portfolio -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-<meta name="plugin" content="www">
-<meta name="prefix" content="">
-<meta name="controller" content="static">
-<meta name="model" content="User">
-<meta name="action" content="view">
-<meta name="page_id" content="">
-
-<!-- stuff about the user, for javascript -->
-
-<!-- stuff for search engines, etc. -->
-<meta name="description" content="">
-<meta property="og:description" content="">
-<meta name="keywords" content="">
-			<link rel="stylesheet" type="text/css" href="./index_files/basics.css">
-			<link rel="stylesheet" type="text/css" href="./index_files/objects.css">
-			<link rel="stylesheet" type="text/css" href="./index_files/core.css">
-			<link rel="stylesheet" type="text/css" href="./index_files/colors.css">
-			<link rel="stylesheet" type="text/css" href="./index_files/fonts.css">
-			<link rel="stylesheet" type="text/css" href="./index_files/cake.css">
-			<link rel="stylesheet" type="text/css" href="./index_files/files.css">
-			<link rel="stylesheet" type="text/css" href="./index_files/nav.css">
-			<link rel="stylesheet" type="text/css" href="./index_files/main.css">
-			<link rel="stylesheet" type="text/css" href="./index_files/admin.css">
-<link rel="stylesheet" type="text/css" href="./index_files/font-awesome.css">
-<link rel="stylesheet" type="text/css" href="./index_files/layout.css">
-<script type="text/javascript" src="./index_files/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="./index_files/jquery.serializeObject.min.js"></script>
-<script type="text/javascript" src="./index_files/bootstrap.js"></script>
-<link rel="stylesheet" type="text/css" href="./index_files/bootstrap.css">
-<script type="text/javascript" src="./index_files/bootstrap-multiselect.js"></script>
-<link rel="stylesheet" type="text/css" href="./index_files/bootstrap-multiselect.css">
-<script type="text/javascript" src="./index_files/inflection.js"></script>
-<script type="text/javascript" src="./index_files/core.js"></script>
-<script type="text/javascript" src="./index_files/jquery.form.js"></script>
-<script type="text/javascript" src="./index_files/ajax.js"></script>
-<script type="text/javascript" src="./index_files/editor.js"></script>
-<script type="text/javascript" src="./index_files/moment.js"></script>
-<script type="text/javascript" src="./index_files/holder.js"></script>
-<script type="text/javascript" src="./index_files/jquery.filter_input.js"></script>
-<script type="text/javascript" src="./index_files/jquery.autogrow.js"></script>
-<script type="text/javascript" src="./index_files/jquery-ui.min.js"></script>
-<link rel="stylesheet" type="text/css" href="./index_files/jquery-ui.css">
-<script>lightbox_path = './index_files/lightbox/';</script>
-<script type="text/javascript" src="./index_files/jquery.lightbox.js"></script>
-<link rel="stylesheet" type="text/css" href="./index_files/jquery.lightbox.css">
-<script type="text/javascript" src="./index_files/formValidation.js"></script>
-<script type="text/javascript" src="./index_files/bootstrap(1).js"></script>
-<script type="text/javascript" src="./index_files/foundation.js"></script>
-<link rel="stylesheet" type="text/css" href="./index_files/formValidation.css">
-<script type="text/javascript" src="./index_files/moment(1).js"></script>
-<script type="text/javascript" src="./index_files/jquery.slimscroll.js"></script>
-<script type="text/javascript" src="./index_files/bootstrap-datetimepicker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="./index_files/bootstrap-datetimepicker.css">
-<script type="text/javascript" src="./index_files/jquery.touchSwipe.js"></script>
-<script type="text/javascript" src="./index_files/daterangepicker.js"></script>
-<link rel="stylesheet" type="text/css" href="./index_files/daterangepicker-bs3.css">
-<script type="text/javascript" src="./index_files/bootstrap-dialog.js"></script>
-<link rel="stylesheet" type="text/css" href="./index_files/bootstrap-dialog.css">
-<script type="text/javascript" src="./index_files/bootstrap-maxlength.js"></script>
-
-
-
-
-<script type="text/javascript" src="./index_files/jquery.ba-hashchange.js"></script>
-<script type="text/javascript" src="./index_files/onload.js"></script>
-<script type="text/javascript" src="./index_files/bootstrap-datepicker.js"></script>
-<link rel="stylesheet" type="text/css" href="./index_files/bootstrap-datepicker3.css">
-<!-- SCIPT -->
-<script type="text/javascript" src="./index_files/tinymce.jquery.js"></script>
-<script type="text/javascript" src="./index_files/jquery.tinymce.min.js"></script>
-<script type="text/javascript" src="./index_files/sortable.js"></script>
-<link rel="stylesheet" type="text/css" href="./index_files/sortable.css">
-<script type="text/javascript" src="./index_files/jquery.jeditable.js"></script>
-<script type="text/javascript" src="./index_files/jquery.jeditable.autogrow.js"></script>
-<script type="text/javascript" src="./index_files/jquery.jeditable.mce.js"></script>
-<script type="text/javascript" src="./index_files/inline_edit.js"></script>
-<link rel="stylesheet" type="text/css" href="./index_files/editable.css">
-<script type="text/javascript" src="./index_files/cropper.js"></script>
-<link rel="stylesheet" type="text/css" href="./index_files/cropper.css">
-<script>
-$(document).on('click', '.creload', function() {
-        var mySrc = $(this).prev().attr('src');
-        var glue = '?';
-        if(mySrc.indexOf('?')!=-1)  {
-            glue = '&';
-        }
-        $(this).prev().attr('src', mySrc + glue + new Date().getTime());
-        return false;
-    });
-</script>
-
-        
-    <title>
-    	Tomas Maly Portfolio    </title>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body id="top" class="www static view">
-  <div id="body_wrapper" class="">
-      <div id="main_wrapper" class=" ">
-  	    <div id="main" class=" block ">
-  		 		<!-- start Core.main -->
-    	<link rel="stylesheet" type="text/css" href="./index_files/www.css"> <!-- custom portion -->
-			    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand nobr" href="/">
-	  	<img src="./index_files/me.jpg" style="height: 24px;">
-	  	Tomas Maly
-		  	  </a>
-		  	  <span class='navbar-text bold'>
-		  	  PHP/Laravel Web Developer &bull;
-		  	  Asheville, NC
-		  	  </span>
-        </div>
-        <div class="collapse navbar-collapse">
-
-          	<ul class="nav navbar-nav navbar-right">
-
-          		<li><a href="https://www.linkedin.com/in/tomas-maly">LinkedIn</a></li>
-          		<li><a class="" href="http://github.com/tmaly1980" target="">GitHub</a></li>
-          		<li><a class="" href="./index_files/Tomas-Maly-Resume-PHP-Nov2016.doc" target="">Resume (DOC)</a></li>
-
-          		<li><a href="javascript:void(0);" onClick="window.location.href = 'mai'+'lto:tmaly1980'+'@gmai'+'l.com';">Contact</a></li>
-
-          	</ul>
-      </div><!--/.nav-collapse -->
-      </div>
-    </div>
-	    <div id="page_wrapper" class="container-fluid  block ">
-          <div class="">
-        <div id="main_content" class="main ">
-    		
-		<div class="row">
-		<div id="titled_content" class="col-md-12 ">
-		<div class="row">
-			<div id="page_title_row">
-      			<h2 id="page_title" class="page-header"> Web Development Portfolio	</h2>
-			</div>
-			<div class="clear"></div>
-
-			<div class="col-md-12">
-			<div class='row'>
-		<div class='pull-right col-md-3'>
-			<img src='./index_files/me.jpg' class='maxwidth100p'/>
-		</div>		
-		<div class='pull-left col-md-9'>
-			<div class='alert alert-info lead'>
-				I have done a variety of web development projects since 2002, including analytics, e-commerce, content management, marketing, search engine optimization, social media, and telecommunications.
-			</div>
-			<div class='alert alert-info lead'>
-				My main technological focus includes Laravel and CakePHP-based PHP server programming for rapid/well-designed application development in a Linux environment utilizing MySQL as a database backend. Frontend/browser development is utilized using HTML5, jQuery javascript programming, and Bootstrap CSS mobile-friendly frameworks. I have Linux system administration experience in startup, small business and large corporate environments.
-			</div>
-		</div>
-	</div>
-
-
-<div class="paddingtop25">
-
-	<h3>Grower Analytics (<a href="http://groweranalytics.com/">http://groweranalytics.com/</a>)</h3>
-	<p>
-		Online analytics platform for agricultural industry, with mobile-friendly and API interfaces. Helping farmers see a high level overview of their crop yields, with history, trends and comparisons.
-	</p>
-	<ul>
-		<li>Developed using Laravel and CakePHP frameworks in a Windows Azure/SQL Server cloud environment with database optimization. 
-		<li>Data importing and exporting using XML, Excel/CSV, and JSON – presented with Google/Morris charts and tabular data. 
-		<li>User interface design with CSS3/Bootstrap and jQuery. 
-		<li>Responsive data filtering/presentation using Vue.js framework. 
-		<li>Custom styling using SASS-based programmable stylesheets. 
-		<li>Integrating and migrating legacy CakePHP with Laravel systems. 
-		<li>Using OneNote and Trello for Agile development cycles. Version control and deployment with git.
-	</ul>
-	<div class='row'>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/cvsd/dashboard.png">
-			<img src="./index_files/cvsd/thumbs/dashboard.png">
-			<br>
-			Analytics dashboard
-		</a>
-		</div>		
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/cvsd/filtering.png">
-			<img src="./index_files/cvsd/thumbs/filtering.png">
-			<br>
-			Dynamic filtering (without page refresh)
-		</a>
-		</div>		
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/cvsd/comparison.png">
-			<img src="./index_files/cvsd/thumbs/comparison.png">
-			<br>
-			Multi-year comparison
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/cvsd/csv-export.png">
-			<img src="./index_files/cvsd/thumbs/csv-export.png">
-			<br>
-			Export data to CSV/Excel
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/cvsd/mobile.png">
-			<img src="./index_files/cvsd/thumbs/mobile.png">
-			<br>
-			Mobile-friendly interface
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/cvsd/field.png">
-			<img src="./index_files/field.png">
-			<br>
-			Field details w/map
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/cvsd/data.png">
-			<img src="./index_files/data.png">
-			<br>
-			Inventory lists
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/cvsd/user_add.png">
-			<img src="./index_files/user_add.png">
-			<br>
-			Multiple user access
-		</a>
-		</div>
-	</div>
-</div>
-<div class="clear"></div>
-
-<div class="paddingtop25">
-
-	<h3>Hopeful Press</h3>
-	<p>
-Helping animal rescues meet adoption and fundraising goals with adoption portal service. Intuitive user interface design for non-technical users. 
-</p>
-<ul>
-	<li>Backend service based on CakePHP framework with jQuery and Bootstrap frontend. 
-	<li>Development of user-friendly website customization tools utilizing LESS stylesheet and SVG graphics processing for dynamic website designs. 
-	<li>Payment processing and donation system through Stripe and PayPal. 
-	<li>Custom content management system for managing animal listings, forms for receiving volunteer and adoption applications (with email notification). 
-	<li>Cross-browser/mobile-friendly frontend and administrative interface. 
-	<li>Version control and remote deployment using git repository.
-	</ul>
-	<div class='row'>
-		<!--
-		<div class='left width225'>
-		<ul>
-			<li>DIY website signup
-			<li>Customizable designs picked from pre-made list
-			<li>Users can add/update content at their convenience
-			<li>Various content including news, events, photos and videos
-			<li>Unlimited informative/educational pages and projects group information together, including links to more detailed information
-			<li>Each site can allow any number of users to update different content
-			<li>Customizable home page, about page and contact us page
-			<li>Share links to external resources and files for download
-			<li>Charts and graphs show usage statistics of site
-		</ul>
-		</div>
-		-->
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/home1.png">
-			<img src="./index_files/home1.png">
-			<br>
-			Home page
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/members.png">
-			<img src="./index_files/members.png">
-			<br>
-			Members only page
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/news_add.png">
-			<img src="./index_files/news_add.png">
-			<br>
-			Adding news updates
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/news.png">
-			<img src="./index_files/news.png">
-			<br>
-			News Posts
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/events.png">
-			<img src="./index_files/events.png">
-			<br>
-			Events
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/pages.png">
-			<img src="./index_files/pages.png">
-			<br>
-			Educational pages
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/photos.png">
-			<img src="./index_files/photos.png">
-			<br>
-			Photo albums
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/videos.png">
-			<img src="./index_files/videos.png">
-			<br>
-			Videos
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/events_edit.png">
-			<img src="./index_files/events_edit.png">
-			<br>
-			Easy to update
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/login.png">
-			<img src="./index_files/login.png">
-			<br>
-			Update content after signing in
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/stats.png">
-			<img src="./index_files/stats.png">
-			<br>
-			Measure/visualize visitors each week
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/users.png">
-			<img src="./index_files/users.png">
-			<br>
-			User accounts
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/edit_user.png">
-			<img src="./index_files/edit_user.png">
-			<br>
-			Updating users
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/contact.png">
-			<img src="./index_files/contact.png">
-			<br>
-			List contacts
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/add_bio.png">
-			<img src="./index_files/add_bio.png">
-			<br>
-			Add member biographies
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/links.png">
-			<img src="./index_files/links.png">
-			<br>
-			List useful external resources
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/design_colors.png">
-			<img src="./index_files/design_colors.png">
-			<br>
-			Customize design and theme
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/downloads.png">
-			<img src="./index_files/downloads.png">
-			<br>
-			List files for download
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/freelance/billing.png">
-			<img src="./index_files/billing.png">
-			<br>
-			Credit card processing for paid services
-		</a>
-		</div>
-	</div>
-</div>
-<div class="clear"></div>
-
-
-<div class="paddingtop25">
-
-	<h3>Harmony Designs (<a href="http://harmonydesigns.com/">http://harmonydesigns.com</a>)</h3>
-	<p>
-Personalized gift ordering system allowing customers to see online live preview of products before ordering. User interface design for preview and ordering, with Authorize.net payment API's. Search engine optimization, A/B testing and conversion optimization of product marketing pages. Developing cross-browser user interface for online previewing, using jQuery, CSS3, SVG and ImageMagick. 
-	</p>
-	<div class='row'>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/hd/homepage.png">
-			<img src="./index_files/homepage.png">
-			<br>
-			Home page
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/hd/product.png">
-			<img src="./index_files/product.png">
-			<br>
-			Product landing page
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/hd/pricing.png">
-			<img src="./index_files/pricing.png">
-			<br>
-			Pricing details
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/hd/reviews.png">
-			<img src="./index_files/reviews.png">
-			<br>
-			Product reviews
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/hd/shipping.png">
-			<img src="./index_files/shipping.png">
-			<br>
-			Shipping calculator
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/hd/stamps.png">
-			<img src="./index_files/stamps.png">
-			<br>
-			Stamp Catalog
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/hd/faq.png">
-			<img src="./index_files/faq.png">
-			<br>
-			Frequently Asked Questions
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/hd/contact.png">
-			<img src="./index_files/contact(1).png">
-			<br>
-			Contact Form
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/hd/designer.png">
-			<img src="./index_files/designer.png">
-			<br>
-			Online Designer Tool
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/hd/cart.png">
-			<img src="./index_files/cart.png">
-			<br>
-			Shopping Cart
-		</a>
-		</div>
-		<div class='col-sm-3'>
-		<a class="lightbox" href="./index_files/hd/checkout.png">
-			<img src="./index_files/checkout.png">
-			<br>
-			Checkout Form
-		</a>
-		</div>
-	</div>
-</div>
-<div class="clear"></div>
-<div class="paddingtop25">
-	<h3>Better Than the Bookstore</h3>
-	<p>
-		Online used bookstore for local college market, including consignment-based reselling. Sellers could list books online and be notified when orders were submitted. Inventory system integrated with Amazon.com's ISBN database, allowing for instant cover images and book details. Ordering included credit card processing and email notification system. CakePHP in a Linux/MySQL environment.
-	</p>
-</div>
-<div class="clear"></div>
-<div class="paddingtop25">
-	<h3>First Fashion</h3>
-	<p>
-	Philadelphia-based fashion social network for models, photographers, makeup artists, etc. Models and photographers each sign up with accounts and add details to their profiles - photo samples, recent gigs, etc. Rating systems provided reviews for models/photographers from previous work experience. Included messaging and email notification system. Server technologies based on CakePHP in a Linux/MySQL environment.
-	</p>
-</div>
-<div class="clear"></div>
-
-<div class="paddingtop25">
-	<h3>Innovex Mortgage/Linsco Private Ledger</h3>
-	<p>
-	Silicon-Valley based mortgage services hosting provider offering a financial analysis tool for loan agents to restructure client finances through refinances. Web application asks for client debts and mortgage information and searches live loan database with banks to offer best options for restructuring debts. Server technologies utilized Perl and PHP in a Linux/MySQL environment.
-	</p>
-</div>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tomas Maly — Senior Mobile &amp; Full Stack Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-.lightbox 
-{
-	display: block;
-	max-height: 225px;
-	margin: 10px;
-	text-align: center;
-}
-.lightbox img
-{
-	border: solid 1px #999;
-}
-</style>
+  :root{
+    --bg:#ffffff;
+    --surface:#f7f8fa;
+    --line:#e2e5eb;
+    --teal:#0f766e;
+    --teal-light:#e6f4f3;
+    --text:#0d1424;
+    --text-dim:#4a5568;
+    --text-faint:#9aa3b2;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding:48px 20px 80px;
+  }
+  .wrap{max-width:780px;margin:0 auto;}
 
-</div>
-				</div>
-				<div class="clear"></div>
-							</div>
-						</div>
-		</div>
-			<div class="clear"></div>
-		</div>
-				</div>
-		        </div>
-	<div class="clear"></div>
+  /* ── INTRO ── */
+  .intro{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:24px;
+    margin-bottom:32px;
+    flex-wrap:wrap;
+  }
+  .intro-left{display:flex;align-items:center;gap:18px;}
+  .avatar{
+    width:72px;height:72px;border-radius:50%;
+    object-fit:cover;border:2px solid var(--line);flex-shrink:0;
+  }
+  .intro-name h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:clamp(24px,4vw,32px);
+    margin:0 0 3px;
+    letter-spacing:-0.01em;
+    color:var(--text);
+  }
+  .intro-name .subtitle{
+    font-size:14px;
+    font-weight:500;
+    color:var(--teal);
+    margin:0;
+  }
+  .intro-contact{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:6px;
+    flex-shrink:0;
+  }
+  .contact-link{
+    font-family:'Inter',sans-serif;
+    font-size:13px;
+    font-weight:500;
+    color:var(--teal);
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+    transition:border-color .15s;
+  }
+  .contact-link:hover{border-color:var(--teal);}
+  .contact-email{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    color:var(--text-faint);
+  }
+
+  /* ── MISSION ── */
+  .mission{
+    background:var(--teal-light);
+    border-left:3px solid var(--teal);
+    padding:14px 18px;
+    margin:0 0 32px;
+    font-family:'Space Grotesk',sans-serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:15px;
+    line-height:1.55;
+    color:var(--text);
+    border-radius:0 6px 6px 0;
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+    border:1px solid var(--line);
+    border-radius:8px;
+    overflow:hidden;
+    margin-bottom:52px;
+  }
+  .skill-col{
+    padding:14px 16px;
+    border-right:1px solid var(--line);
+  }
+  .skill-col:last-child{border-right:none;}
+  .skill-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--teal);
+    margin-bottom:6px;
+  }
+  .skill-body{
+    font-size:12.5px;
+    line-height:1.55;
+    color:var(--text-dim);
+  }
+
+  /* ── SECTIONS ── */
+  section.block{margin-bottom:56px;}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:0;
+    margin-bottom:0;
+    padding-bottom:10px;
+    border-bottom:2px solid var(--text);
+  }
+  .section-head h2{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:17px;
+    font-weight:700;
+    margin:0;
+    letter-spacing:-0.005em;
+    color:var(--text);
+  }
+  .section-stack{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11.5px;
+    color:var(--text-faint);
+    margin:10px 0 4px;
+  }
+  .section-intro{
+    color:var(--text-dim);
+    font-size:13px;
+    line-height:1.65;
+    font-style:italic;
+    margin:10px 0 0;
+  }
+
+  /* ── ROWS ── */
+  .rows{margin-top:18px;}
+  .row{
+    display:flex;
+    gap:16px;
+    padding:18px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .row:last-child{border-bottom:none;}
+
+  .thumbs{display:flex;gap:6px;flex-shrink:0;width:60px;}
+  .thumbs.double{width:60px;flex-wrap:wrap;}
+  .thumb{
+    position:relative;
+    width:60px;
+    aspect-ratio:230/498;
+    border-radius:8px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:var(--surface);
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  .thumbs.double .thumb{width:27px;}
+  .thumb img{
+    width:100%;height:100%;
+    object-fit:cover;display:block;
+    transition:transform .22s ease;
+  }
+  .thumb:hover img{transform:scale(1.05);}
+  .thumb-empty{width:60px;aspect-ratio:230/498;flex-shrink:0;}
+
+  .content{flex:1;min-width:0;}
+  .content .title-line{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:3px;
+  }
+  .content h3{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:15.5px;
+    font-weight:600;
+    margin:0;
+    letter-spacing:-0.005em;
+    color:var(--text);
+  }
+  .appstore-link{
+    font-family:'Inter',sans-serif;
+    font-size:11.5px;
+    font-weight:500;
+    color:var(--teal);
+    text-decoration:none;
+    white-space:nowrap;
+    border-bottom:1px solid transparent;
+    transition:border-color .15s;
+  }
+  .appstore-link:hover{border-color:var(--teal);}
+  .content .stack{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    color:var(--teal);
+    margin-bottom:5px;
+  }
+  .content p.desc{
+    color:var(--text-dim);
+    font-size:13px;
+    line-height:1.58;
+    margin:0;
+  }
+
+  /* ── LIGHTBOX ── */
+  .lightbox{
+    position:fixed;inset:0;
+    background:rgba(10,15,26,0.88);
+    display:none;align-items:center;justify-content:center;
+    z-index:999;padding:40px 20px;cursor:zoom-out;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{
+    max-height:90vh;max-width:90vw;
+    border-radius:14px;
+    box-shadow:0 24px 64px rgba(0,0,0,.5);
+  }
+  .lightbox .hint{
+    position:fixed;bottom:22px;left:50%;transform:translateX(-50%);
+    font-family:'JetBrains Mono',monospace;font-size:11px;
+    color:rgba(255,255,255,.4);letter-spacing:.05em;
+  }
+
+  @media(max-width:600px){
+    .skills-grid{grid-template-columns:1fr;}
+    .skill-col{border-right:none;border-bottom:1px solid var(--line);}
+    .skill-col:last-child{border-bottom:none;}
+    .intro-contact{align-items:flex-start;}
+    .intro{flex-direction:column;gap:16px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- INTRO -->
+  <div class="intro">
+    <div class="intro-left">
+      <img class="avatar" src="https://tmaly1980.github.io/index_files/me.jpg" alt="Tomas Maly">
+      <div class="intro-name">
+        <h1>Tomas Maly</h1>
+        <p class="subtitle">Senior Mobile &amp; Full Stack Engineer</p>
       </div>
     </div>
-    <div class="clear"></div>
-    <div id="footer">
-	<div class="center_align">
-	© 2017
-</div>
+    <div class="intro-contact">
+      <a class="contact-link" href="https://www.upwork.com/freelancers/~01093b324f42db80eb" target="_blank" rel="noopener">Upwork ↗</a>
+      <a class="contact-link" href="https://github.com/tmaly1980" target="_blank" rel="noopener">GitHub ↗</a>
+      <span class="contact-email">tmaly1980@gmail.com</span>
     </div>
-
-	
-<!-- end main -->
-	  	  </div>
-  </div>
   </div>
 
-    
+  <!-- MISSION -->
+  <p class="mission">"Developing and maintaining mobile and web apps, specializing in React and React Native frameworks. I love to design for future growth and I've never dealt with a bug I haven't been able to solve."</p>
 
-</body></html>
+  <!-- SKILLS -->
+  <div class="skills-grid">
+    <div class="skill-col">
+      <div class="skill-label">Industries</div>
+      <div class="skill-body">Fitness &amp; wellness, field service / logistics, two-sided marketplaces, ecommerce, faith-based &amp; nonprofit, rideshare, gaming &amp; hospitality</div>
+    </div>
+    <div class="skill-col">
+      <div class="skill-label">Technologies</div>
+      <div class="skill-body">React Native, Expo, TypeScript, Swift, SwiftUI, Node.js, Supabase, PostgreSQL, Firebase, Stripe Connect, WebSockets, OpenAI Vision, PHP, Laravel, CakePHP, Ruby on Rails, Fastlane, CircleCI, GitHub Actions</div>
+    </div>
+    <div class="skill-col">
+      <div class="skill-label">Notable Apps</div>
+      <div class="skill-body">LockAtlas, TrueCoach, ZingFit, MarianaTek, Spot, FitRoutine, Players Pal</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <section class="block">
+    <div class="section-head">
+      <h2>2000–2016: Web Development</h2>
+    </div>
+    <div class="section-stack">PHP · CakePHP · Ruby on Rails · Laravel</div>
+    <div class="rows">
+
+      <div class="row">
+        <div class="thumb-empty"></div>
+        <div class="content">
+          <div class="title-line"><h3>Innovex Mortgage</h3></div>
+          <p class="desc">Debt analysis and refinance tools for a California mortgage lender.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="thumb-empty"></div>
+        <div class="content">
+          <div class="title-line">
+            <h3>Harmony Designs</h3>
+            <a class="appstore-link" href="https://harmonydesigns.com" target="_blank" rel="noopener">Visit site ↗</a>
+          </div>
+          <p class="desc">Custom-designed personal gifts ordering system for a private manufacturer, featuring a live online product preview (design-as-you-go), payment processing, shipping management, and SEO/web analytics.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="thumb-empty"></div>
+        <div class="content">
+          <div class="title-line"><h3>Central Valley Software</h3></div>
+          <p class="desc">Agricultural analytics platform for a Central Valley, California business.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="thumb-empty"></div>
+        <div class="content">
+          <div class="title-line"><h3>MyTown USA</h3></div>
+          <p class="desc">Local events and coupons platform for regional businesses, designed to scale across multiple cities.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="block">
+    <div class="section-head">
+      <h2>2018–2022: Mobile Freelance</h2>
+    </div>
+    <div class="section-intro">React Native, cross-platform — focused on multimedia and payment processing, including multi-vendor branding.</div>
+    <div class="rows">
+
+      <div class="row">
+        <div class="thumb-empty"></div>
+        <div class="content">
+          <div class="title-line"><h3>Rosen Institute</h3></div>
+          <p class="desc">Podcast player app for a large law firm.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="thumbs">
+          <div class="thumb" onclick="openLightbox('https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/cf/02/75/cf02755c-50c0-3060-e6b8-6c46c0ece97f/d8044b61-5125-434d-b2ea-852d2a1d2754_apple_app_6.5_-_2.png/460x996bb.webp')">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/cf/02/75/cf02755c-50c0-3060-e6b8-6c46c0ece97f/d8044b61-5125-434d-b2ea-852d2a1d2754_apple_app_6.5_-_2.png/460x996bb.webp" alt="Fluid Running" loading="lazy">
+          </div>
+        </div>
+        <div class="content">
+          <div class="title-line">
+            <h3>Fluid Running</h3>
+            <a class="appstore-link" href="https://apps.apple.com/us/app/fluid-running/id1377251019" target="_blank" rel="noopener">View in App Store ↗</a>
+          </div>
+          <p class="desc">Media player app for an aquatic fitness program.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="thumbs">
+          <div class="thumb" onclick="openLightbox('https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/2c/d9/17/2cd917a3-0050-5810-04f6-d3838518107c/pr_source.png/460x996bb.webp')">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/2c/d9/17/2cd917a3-0050-5810-04f6-d3838518107c/pr_source.png/460x996bb.webp" alt="Pocket Pushkah" loading="lazy">
+          </div>
+        </div>
+        <div class="content">
+          <div class="title-line">
+            <h3>Pocket Pushkah</h3>
+            <a class="appstore-link" href="https://apps.apple.com/us/app/mytzedakah-pushka-chabad-ns/id1506259784" target="_blank" rel="noopener">View in App Store ↗</a>
+          </div>
+          <p class="desc">White-labeled faith-based charity app, cloned and rebranded for 7–8 different organizations.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="block">
+    <div class="section-head">
+      <h2>2018–2025: Global Enterprise Wellness and Field Services Mobile Development (Xplor Technologies)</h2>
+    </div>
+    <div class="section-intro">Cross-platform mobile engineering (React Native and SwiftUI/iOS) across four products, building and deploying CI/CD pipelines (CircleCI, GitHub Actions, Fastlane) for up to 400 clients, leading teams of up to 5 developers across global time zones.</div>
+    <div class="rows">
+
+      <div class="row">
+        <div class="thumbs">
+          <div class="thumb" onclick="openLightbox('https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/42/b9/27/42b92769-c014-edb9-00d0-1931239a45e5/X-00.png/460x996bb.webp')">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/42/b9/27/42b92769-c014-edb9-00d0-1931239a45e5/X-00.png/460x996bb.webp" alt="ZingFit" loading="lazy">
+          </div>
+        </div>
+        <div class="content">
+          <div class="title-line">
+            <h3>ZingFit</h3>
+            <a class="appstore-link" href="https://apps.apple.com/us/app/off-duty-pilates/id6755767474" target="_blank" rel="noopener">Ex. white-label app ↗</a>
+          </div>
+          <div class="stack">React Native</div>
+          <p class="desc">Build automation for fitness studios — custom branding and customer scheduling. ~200 clients.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="thumbs">
+          <div class="thumb" onclick="openLightbox('https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/b9/84/e4/b984e4a6-45ec-1361-db9a-149a99e1c6f7/pr_source.jpg/460x996bb.webp')">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/b9/84/e4/b984e4a6-45ec-1361-db9a-149a99e1c6f7/pr_source.jpg/460x996bb.webp" alt="MarianaTek" loading="lazy">
+          </div>
+        </div>
+        <div class="content">
+          <div class="title-line">
+            <h3>MarianaTek</h3>
+            <a class="appstore-link" href="https://apps.apple.com/us/app/barrys/id1389503012" target="_blank" rel="noopener">Ex. white-label app ↗</a>
+          </div>
+          <div class="stack">Swift · SwiftUI</div>
+          <p class="desc">Fitness studio booking and billing/scheduling, similar to ZingFit. ~400 clients.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="thumbs">
+          <div class="thumb" onclick="openLightbox('https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6e/31/73/6e31730d-8ea1-6e07-ad27-27baefd68124/Simulator_Screenshot_-_iPhone_16_Plus_-_2024-10-19_at_20.52.51.png/460x998bb.webp')">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6e/31/73/6e31730d-8ea1-6e07-ad27-27baefd68124/Simulator_Screenshot_-_iPhone_16_Plus_-_2024-10-19_at_20.52.51.png/460x998bb.webp" alt="Spot" loading="lazy">
+          </div>
+        </div>
+        <div class="content">
+          <div class="title-line">
+            <h3>Spot</h3>
+            <a class="appstore-link" href="https://apps.apple.com/us/app/delivery-connect-mobile/id1222103653" target="_blank" rel="noopener">View in App Store ↗</a>
+          </div>
+          <div class="stack">React Native · MobX (migrated from Xamarin)</div>
+          <p class="desc">Led migration from Xamarin to React Native for a dry cleaning pickup-and-delivery logistics platform, including an offline-mode driver app.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="thumbs">
+          <div class="thumb" onclick="openLightbox('https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ff/64/26/ff6426ff-0f17-7270-4db7-c1222439554d/4388ea44-6337-4984-8430-3e9710885c9a_iphone_-_S3_-_Workout.jpg/460x996bb.webp')">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ff/64/26/ff6426ff-0f17-7270-4db7-c1222439554d/4388ea44-6337-4984-8430-3e9710885c9a_iphone_-_S3_-_Workout.jpg/460x996bb.webp" alt="TrueCoach" loading="lazy">
+          </div>
+        </div>
+        <div class="content">
+          <div class="title-line">
+            <h3>TrueCoach</h3>
+            <a class="appstore-link" href="https://apps.apple.com/us/app/truecoach/id1439127794" target="_blank" rel="noopener">View in App Store ↗</a>
+          </div>
+          <div class="stack">Swift · SwiftUI</div>
+          <p class="desc">Two-sided coach/client fitness coaching app with in-app chat and wearable/smartwatch integration for performance stats. Top-rated on the App Store (33K+ ratings).</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section class="block">
+    <div class="section-head">
+      <h2>Sept 2025–Present: Mobile Freelance</h2>
+    </div>
+    <div class="rows">
+
+      <div class="row">
+        <div class="thumbs">
+          <div class="thumb" onclick="openLightbox('https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c8/e9/f2/c8e9f24f-6e3b-78b9-4741-2db35c89344a/image2__U00282_U0029.png/460x996bb.webp')">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c8/e9/f2/c8e9f24f-6e3b-78b9-4741-2db35c89344a/image2__U00282_U0029.png/460x996bb.webp" alt="Players Pal" loading="lazy">
+          </div>
+        </div>
+        <div class="content">
+          <div class="title-line">
+            <h3>Players Pal</h3>
+            <a class="appstore-link" href="https://apps.apple.com/us/app/players-pal/id6443823691" target="_blank" rel="noopener">View in App Store ↗</a>
+          </div>
+          <div class="stack">React Native</div>
+          <p class="desc">Casino rewards/engagement app with coupons and restaurant listings.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="thumbs">
+          <div class="thumb" onclick="openLightbox('https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a0/55/4d/a0554d6f-6a35-1b90-cb1f-afc76128f2de/Final_Screen_6.png/460x996bb.webp')">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a0/55/4d/a0554d6f-6a35-1b90-cb1f-afc76128f2de/Final_Screen_6.png/460x996bb.webp" alt="FitRoutine" loading="lazy">
+          </div>
+        </div>
+        <div class="content">
+          <div class="title-line">
+            <h3>FitRoutine / GreenZone</h3>
+            <a class="appstore-link" href="https://apps.apple.com/us/app/fitroutine-wellness-planner/id6741724873" target="_blank" rel="noopener">View in App Store ↗</a>
+          </div>
+          <div class="stack">React Native · Expo</div>
+          <p class="desc">Personalized weekly exercise/meal/habit planner with subscription monetization and guided meditations.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="thumbs double">
+          <div class="thumb" onclick="openLightbox('https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d7/ed/47/d7ed4702-dfcd-7962-053e-1c37ec3a406f/Simulator_Screenshot_-_iPhone_11_Pro_Max_-_2026-01-21_at_14.53.07.png/460x996bb.webp')">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d7/ed/47/d7ed4702-dfcd-7962-053e-1c37ec3a406f/Simulator_Screenshot_-_iPhone_11_Pro_Max_-_2026-01-21_at_14.53.07.png/460x996bb.webp" alt="LockAtlas customer" loading="lazy">
+          </div>
+          <div class="thumb" onclick="openLightbox('https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/64/c3/f8/64c3f84a-c1b7-46b8-c3c7-a0446957062e/Simulator_Screenshot_-_iPhone_14_Plus_-_2025-12-26_at_22.10.00.png/460x996bb.webp')">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/64/c3/f8/64c3f84a-c1b7-46b8-c3c7-a0446957062e/Simulator_Screenshot_-_iPhone_14_Plus_-_2025-12-26_at_22.10.00.png/460x996bb.webp" alt="LockAtlas Technician" loading="lazy">
+          </div>
+        </div>
+        <div class="content">
+          <div class="title-line">
+            <h3>LockAtlas + LockAtlas Technician</h3>
+            <a class="appstore-link" href="https://apps.apple.com/us/app/lockatlas/id6757092954" target="_blank" rel="noopener">Customer ↗</a>
+            <a class="appstore-link" href="https://apps.apple.com/us/app/lockatlas-technician/id6757093075" target="_blank" rel="noopener">Technician ↗</a>
+          </div>
+          <div class="stack">React Native · Expo · TypeScript · Supabase · Stripe Connect · OpenAI Vision</div>
+          <p class="desc">Two-sided locksmith marketplace with live order updates, AI photo cost estimation, and radius-based job matching.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="thumb-empty"></div>
+        <div class="content">
+          <div class="title-line"><h3>Meti Taxi</h3></div>
+          <div class="stack">React Native · Next.js · Custom OSM-based map/routing engine</div>
+          <p class="desc">Scalable rideshare platform for Eastern Europe; paused after losing funding due to regulatory changes.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Full size screenshot">
+  <div class="hint">tap anywhere to close</div>
+</div>
+
+<script>
+  function openLightbox(src){
+    document.getElementById('lightbox-img').src=src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox(){
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
+</script>
+</body>
+</html>
