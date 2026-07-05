@@ -97,7 +97,7 @@
   /* ── SKILLS ── */
   .skills-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:140px 1fr;
     gap:0;
     border:1px solid var(--line);
     border-radius:8px;
@@ -105,17 +105,17 @@
     margin-bottom:52px;
   }
   .skill-col{
-    padding:14px 16px;
-    border-right:1px solid var(--line);
+    padding:12px 16px;
+    border-bottom:1px solid var(--line);
   }
-  .skill-col:last-child{border-right:none;}
+  .skill-col:nth-last-child(-n+2){border-bottom:none;}
   .skill-label{
     font-family:'JetBrains Mono',monospace;
     font-size:10.5px;
     letter-spacing:.08em;
     text-transform:uppercase;
     color:var(--teal);
-    margin-bottom:6px;
+    padding-top:2px;
   }
   .skill-body{
     font-size:12.5px;
@@ -247,9 +247,7 @@
   }
 
   @media(max-width:600px){
-    .skills-grid{grid-template-columns:1fr;}
-    .skill-col{border-right:none;border-bottom:1px solid var(--line);}
-    .skill-col:last-child{border-bottom:none;}
+    .skills-grid{grid-template-columns:1fr 1fr;}
     .intro-contact{align-items:flex-start;}
     .intro{flex-direction:column;gap:16px;}
   }
@@ -271,6 +269,7 @@
       <a class="contact-link" href="https://www.upwork.com/freelancers/~01093b324f42db80eb" target="_blank" rel="noopener">Upwork ↗</a>
       <a class="contact-link" href="https://github.com/tmaly1980" target="_blank" rel="noopener">GitHub ↗</a>
       <span class="contact-email">tmaly1980@gmail.com</span>
+      <span class="contact-email">Little Rock, AR (Central)</span>
     </div>
   </div>
 
@@ -279,18 +278,10 @@
 
   <!-- SKILLS -->
   <div class="skills-grid">
-    <div class="skill-col">
-      <div class="skill-label">Industries</div>
-      <div class="skill-body">Fitness &amp; wellness, field service / logistics, two-sided marketplaces, ecommerce, faith-based &amp; nonprofit, rideshare, gaming &amp; hospitality</div>
-    </div>
-    <div class="skill-col">
-      <div class="skill-label">Technologies</div>
-      <div class="skill-body">React Native, Expo, TypeScript, Swift, SwiftUI, Node.js, Supabase, PostgreSQL, Firebase, Stripe Connect, WebSockets, OpenAI Vision, PHP, Laravel, CakePHP, Ruby on Rails, Fastlane, CircleCI, GitHub Actions</div>
-    </div>
-    <div class="skill-col">
-      <div class="skill-label">Notable Apps</div>
-      <div class="skill-body">LockAtlas, TrueCoach, ZingFit, MarianaTek, Spot, FitRoutine, Players Pal</div>
-    </div>
+    <div class="skill-col"><div class="skill-label">Industries</div></div>
+    <div class="skill-col"><div class="skill-body">Fitness &amp; wellness, field service / logistics, two-sided marketplaces, ecommerce, faith-based &amp; nonprofit, rideshare, gaming &amp; hospitality</div></div>
+    <div class="skill-col"><div class="skill-label">Technologies</div></div>
+    <div class="skill-col"><div class="skill-body">React Native, Expo, TypeScript, Swift, SwiftUI, Node.js, Supabase, PostgreSQL, Firebase, Stripe Connect, WebSockets, OpenAI Vision, PHP, Laravel, CakePHP, Ruby on Rails, Fastlane, CircleCI, GitHub Actions</div></div>
   </div>
 
   <!-- SECTION 4 (most recent first) -->
