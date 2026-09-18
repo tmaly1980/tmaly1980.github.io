@@ -1,637 +1,1253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tomas Maly — Senior Mobile & Full-Stack Developer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg: #ffffff;
-  --surface: #f7f8fa;
-  --border: #e4e7ec;
-  --text: #111827;
-  --muted: #6b7280;
-  --accent: #0f766e;
-  --accent-light: #ccfbf1;
-  --accent-mid: #14b8a6;
-  --link: #0f766e;
-  --tag-bg: #f0fdf9;
-  --tag-text: #0f766e;
-  --tag-border: #99f6e4;
-  --row-alt: #fafbfc;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 16px; scroll-behavior: smooth; }
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tomas Maly | Custom Software for Brick-and-Mortar Businesses</title>
+  <meta name="description" content="Custom web and mobile software for brick-and-mortar businesses, including service requests, scheduling, delivery, fulfillment, customer portals, and operational workflow automation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f7f5;
+      --surface: #ffffff;
+      --surface-alt: #eef6f4;
+      --border: rgba(15, 23, 42, 0.08);
+      --text: #122129;
+      --muted: #4e5d68;
+      --muted-strong: #2a3d49;
+      --teal: #0f766e;
+      --teal-strong: #0c5b56;
+      --teal-soft: #dff9f5;
+      --teal-mid: #72d7c1;
+      --shadow: 0 26px 60px rgba(17, 24, 39, 0.12);
+      --radius: 24px;
+      --max: 1180px;
+    }
 
-/* ─── HEADER ─── */
-.site-header {
-  padding: 40px 0 32px;
-  border-bottom: 1px solid var(--border);
-  background: var(--bg);
-}
-.header-inner {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 24px;
-}
-.header-left { flex: 1; }
-.header-avatar {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--accent-light);
-  margin-bottom: 14px;
-  display: block;
-}
-.header-name {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  color: var(--text);
-  margin-bottom: 4px;
-}
-.header-title {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 10px;
-}
-.header-mission {
-  font-size: 0.95rem;
-  color: var(--muted);
-  max-width: 520px;
-  line-height: 1.55;
-}
-.header-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
-  padding-top: 6px;
-  flex-shrink: 0;
-}
-.contact-link {
-  font-size: 0.82rem;
-  color: var(--muted);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.15s;
-}
-.contact-link:hover { color: var(--accent); }
-.contact-link svg { width: 13px; height: 13px; flex-shrink: 0; }
-.contact-plain {
-  font-size: 0.82rem;
-  color: var(--muted);
-}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #f9faf9 0%, #f4f7f7 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button, input, textarea, select { font: inherit; }
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(245, 247, 245, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      gap: 16px;
+    }
+    .brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.04em;
+      font-size: 1.35rem;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+    .nav-links a {
+      color: var(--muted-strong);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--teal-strong); }
+    .nav-cta {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 118, 110, 0.18);
+      background: rgba(15, 118, 110, 0.04);
+      color: var(--teal-strong) !important;
+      font-weight: 600;
+    }
 
-/* ─── SKILLS ROW ─── */
-.skills-bar {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: 12px 0;
-}
-.skills-bar-inner {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-}
-.skills-label {
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-  margin-right: 4px;
-}
-.skill-tag {
-  font-size: 0.75rem;
-  font-weight: 500;
-  background: var(--tag-bg);
-  color: var(--tag-text);
-  border: 1px solid var(--tag-border);
-  border-radius: 20px;
-  padding: 3px 10px;
-  white-space: nowrap;
-}
+    main { padding-bottom: 72px; }
+    section { padding: 80px 0; }
+    .eyebrow {
+      margin: 0 0 12px;
+      font-size: 0.76rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--teal-strong);
+    }
+    h1, h2, h3, h4 {
+      margin: 0 0 16px;
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--text);
+    }
+    h1 {
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      max-width: 640px;
+    }
+    h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      max-width: none;
+      white-space: nowrap;
+    }
+    h3 {
+      font-size: clamp(1.5rem, 2vw, 2.2rem);
+      max-width: 540px;
+    }
+    p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 52px;
+      padding-top: 52px;
+      min-height: 700px;
+    }
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 500px;
+    }
+    .device-stack {
+      position: relative;
+      width: min(100%, 680px);
+      height: 520px;
+    }
+    .device {
+      position: absolute;
+      background: #f6f7f9;
+      border: 1px solid rgba(18, 33, 41, 0.08);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .laptop {
+      left: -28px;
+      top: 18px;
+      width: 102%;
+      height: 480px;
+      border-radius: 18px 18px 16px 16px;
+      padding: 12px;
+      background: linear-gradient(180deg, #f3f7f9 0%, #eef4f4 100%);
+    }
+    .laptop:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -16px;
+      height: 20px;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.02), rgba(15, 23, 42, 0.08));
+      border-radius: 0 0 18px 18px;
+    }
+    .laptop-screen {
+      position: relative;
+      height: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(15, 118, 110, 0.12);
+      background: #edf6f3;
+    }
+    .laptop-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .phone {
+      right: 1px;
+      bottom: 0;
+      width: 190px;
+      height: 350px;
+      border-radius: 30px;
+      padding: 12px 10px 14px;
+      background: linear-gradient(180deg, #ffffff 0%, #edf3f4 100%);
+      z-index: 2;
+    }
+    .phone:before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 104px;
+      height: 20px;
+      background: rgba(18, 33, 41, 0.8);
+      border-radius: 999px;
+    }
+    .phone-screen {
+      height: calc(100% - 24px);
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(15, 118, 110, 0.12);
+      background: #ecf9f7;
+      margin-top: 24px;
+    }
+    .phone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-copy {
+      max-width: 540px;
+    }
+    .hero-copy .eyebrow {
+      margin-bottom: 16px;
+      font-size: 0.76rem;
+    }
+    .hero-copy p {
+      font-size: 1.08rem;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .availability {
+      margin: 18px 0 26px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted-strong);
+      line-height: 1.6;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 0 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .button:hover, .button:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(15, 118, 110, 0.18);
+    }
+    .button.primary {
+      background: var(--teal);
+      color: white;
+    }
+    .button.secondary {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
 
-/* ─── LAYOUT ─── */
-.main {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 0 24px 80px;
-}
+    .section-alt { background: rgba(10, 40, 36, 0.02); }
+    .section-heading {
+      margin-bottom: 26px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .service-card {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px 18px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.03);
+    }
+    .service-card h3 {
+      font-size: 1.14rem;
+      margin-bottom: 10px;
+      letter-spacing: -0.03em;
+    }
+    .service-card p {
+      margin-bottom: 0;
+      font-size: 0.96rem;
+    }
+    .lead-note {
+      margin-top: 26px;
+      font-size: 1.06rem;
+      color: var(--muted-strong);
+    }
 
-/* ─── SECTION ─── */
-.section {
-  margin-top: 44px;
-}
-.section-header {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 6px;
-}
-.section-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text);
-  letter-spacing: -0.01em;
-}
-.section-rule {
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-}
-.section-intro {
-  font-size: 0.875rem;
-  color: var(--muted);
-  margin-bottom: 16px;
-  line-height: 1.55;
-  max-width: 680px;
-}
+    .about-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .about-photo {
+      width: 100%;
+      max-width: 260px;
+      border-radius: 26px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: white;
+    }
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 1 / 1.2;
+    }
+    .about-copy {
+      min-width: 0;
+      box-sizing: border-box;
+      padding-right: 40px;
+    }
+    .about-copy p {
+      font-size: 1.02rem;
+      line-height: 1.8;
+    }
+    .detail-line {
+      margin-top: 18px;
+      display: grid;
+      gap: 8px;
+      color: var(--muted-strong);
+      font-weight: 600;
+      font-size: 0.96rem;
+    }
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.7);
+      text-decoration: none;
+      color: var(--muted-strong);
+      font-weight: 600;
+    }
 
-/* ─── PROJECT ROW ─── */
-.project-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--border);
-}
-.project-row:last-child { border-bottom: none; }
-.thumb-wrap {
-  flex-shrink: 0;
-  width: 80px;
-  height: 80px;
-  border-radius: 14px;
-  overflow: hidden;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  cursor: pointer;
-  position: relative;
-}
-.thumb-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.2s;
-}
-.thumb-wrap:hover img { transform: scale(1.06); }
-.thumb-empty {
-  flex-shrink: 0;
-  width: 80px;
-  height: 80px;
-  border-radius: 14px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.thumb-empty svg { width: 28px; height: 28px; color: var(--border); }
-.proj-content { flex: 1; min-width: 0; }
-.proj-title-line {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 3px;
-}
-.proj-name {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.975rem;
-  font-weight: 700;
-  color: var(--text);
-}
-.proj-link {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--link);
-  text-decoration: none;
-  padding: 2px 8px;
-  border: 1px solid var(--tag-border);
-  border-radius: 20px;
-  background: var(--tag-bg);
-  white-space: nowrap;
-  transition: background 0.15s;
-}
-.proj-link:hover { background: var(--accent-light); }
-.proj-stack {
-  font-size: 0.775rem;
-  color: var(--muted);
-  font-weight: 500;
-  margin-bottom: 5px;
-  letter-spacing: 0.01em;
-}
-.proj-desc {
-  font-size: 0.86rem;
-  color: #374151;
-  line-height: 1.55;
-}
+    .project-showcase {
+      display: grid;
+      gap: 34px;
+    }
+    .project {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+      align-items: center;
+      padding: 24px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+    }
+    .project:nth-child(even) .project-media { order: 2; }
+    .project:nth-child(even) .project-copy { order: 1; }
+    .project-media {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid rgba(15, 118, 110, 0.14);
+      background: #edf6f3;
+      box-shadow: 0 16px 34px rgba(15, 23, 42, 0.08);
+      min-height: 320px;
+    }
+    .project-media img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      aspect-ratio: 16 / 10;
+      cursor: pointer;
+    }
+    .project-media .project-gallery {
+      margin: 12px;
+    }
+    .project-media .placeholder-thumb {
+      min-height: 86px;
+    }
+    .project-kicker {
+      margin: 0 0 8px;
+      color: var(--teal-strong);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .project-copy p {
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--teal-soft);
+      color: var(--teal-strong);
+      border: 1px solid rgba(15, 118, 110, 0.12);
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .placeholder-thumb {
+      min-height: 120px;
+      display: flex;
+      align-items: end;
+      justify-content: flex-start;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px dashed rgba(15, 118, 110, 0.38);
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.06), rgba(255,255,255,0.8));
+      color: var(--muted-strong);
+      font-size: 0.72rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .placeholder-thumb span {
+      display: inline-block;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(15, 118, 110, 0.12);
+      border-radius: 999px;
+      padding: 5px 8px;
+    }
+    .project-wide-media { grid-template-columns: 0.9fr 1.375fr; }
+    .lockatlas-media {
+      background: none;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+    }
+    .lockatlas-phones {
+      display: flex;
+      gap: 28px;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 8px 0;
+    }
+    .lockatlas-phone {
+      position: relative !important;
+      right: auto !important;
+      bottom: auto !important;
+      flex: 0 0 auto;
+      width: 194px;
+      height: 425px;
+      padding: 8px 10px 10px;
+    }
+    .lockatlas-phone::before {
+      width: 80px;
+      height: 16px;
+      top: 8px;
+    }
+    .lockatlas-phone .phone-screen {
+      margin-top: 16px;
+      height: calc(425px - 18px - 16px);
+    }
+    .lockatlas-phone .phone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+    .gallery-thumb {
+      margin: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      cursor: zoom-in;
+      display: flex;
+      flex-direction: column;
+    }
+    .gallery-thumb img {
+      width: 100%;
+      height: 86px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-thumb figcaption {
+      padding: 6px 10px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--muted-strong);
+      background: var(--surface);
+      line-height: 1.3;
+    }
 
-/* ─── LIGHTBOX ─── */
-.lightbox {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  z-index: 100;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  cursor: pointer;
-}
-.lightbox.open { display: flex; }
-.lightbox img {
-  max-width: 90vw;
-  max-height: 85vh;
-  border-radius: 12px;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.6);
-}
-.lightbox-hint {
-  margin-top: 14px;
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.45);
-  font-family: 'Inter', sans-serif;
-}
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .mini-card {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 16px;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.03);
+    }
+    .mini-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+    .mini-card p {
+      font-size: 0.93rem;
+      line-height: 1.6;
+    }
+    .mini-thumb {
+      height: 140px;
+      border-radius: 14px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface-alt);
+    }
+    .mini-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      cursor: zoom-in;
+      padding: 0 12px;
+      background: #e8ecec;
+    }
+    .mini-card a {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: var(--teal-strong);
+      font-weight: 700;
+      text-decoration: none;
+    }
 
-/* ─── RESPONSIVE ─── */
-@media (max-width: 600px) {
-  .header-inner { flex-direction: column; gap: 16px; }
-  .header-right { align-items: flex-start; }
-  .header-name { font-size: 1.6rem; }
-  .thumb-wrap, .thumb-empty { width: 60px; height: 60px; border-radius: 10px; }
-  .project-row { gap: 12px; }
-}
-</style>
+    .faq-wrap {
+      max-width: 880px;
+    }
+    .faq-list {
+      display: grid;
+      gap: 12px;
+    }
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.8);
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 18px 20px;
+      border: 0;
+      background: transparent;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
+    }
+    .faq-question span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--teal-soft);
+      color: var(--teal-strong);
+      font-size: 1.2rem;
+      transition: transform 0.2s ease;
+    }
+    .faq-question[aria-expanded="true"] span {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      padding: 0 20px 18px;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+    .faq-answer[hidden] { display: none; }
+
+    .contact-box {
+      background: linear-gradient(135deg, rgba(12, 91, 86, 0.98), rgba(15, 118, 110, 0.93));
+      border-radius: 32px;
+      padding: 42px 32px;
+      color: white;
+      box-shadow: var(--shadow);
+    }
+    .contact-box h2, .contact-box p, .contact-box a, .contact-box .eyebrow {
+      color: white;
+    }
+    .contact-box h2 {
+      max-width: none;
+      white-space: nowrap;
+    }
+    .contact-box .eyebrow {
+      opacity: 0.9;
+    }
+    .contact-box .button.primary {
+      background: #ffffff;
+      color: var(--teal-strong);
+    }
+    .contact-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .contact-social-btn {
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-weight: 600;
+    }
+    .contact-social-btn:hover, .contact-social-btn:focus-visible {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .contact-link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .contact-link-row a {
+      font-weight: 700;
+      text-decoration: none;
+      opacity: 0.96;
+    }
+    .small-note {
+      margin-top: 18px;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+    }
+
+    footer {
+      padding: 12px 0 32px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; padding-top: 40px; min-height: auto; }
+      .hero-copy { max-width: none; }
+      .services-grid, .mini-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .project { grid-template-columns: 1fr; }
+      .project:nth-child(even) .project-media,
+      .project:nth-child(even) .project-copy { order: initial; }
+      .about-layout { grid-template-columns: 1fr; }
+      .about-photo { max-width: 240px; }
+    }
+
+    @media (max-width: 700px) {
+      .nav { min-height: 64px; flex-wrap: wrap; padding: 12px 0; }
+      .nav-links { justify-content: flex-start; gap: 10px 16px; }
+      .services-grid, .mini-grid, .project-gallery { grid-template-columns: 1fr; }
+      .device-stack { height: 360px; }
+      .laptop { width: 92%; height: 260px; }
+      .phone { right: 6px; width: 170px; height: 320px; }
+      h2 { white-space: normal; }
+      .contact-box h2 { white-space: normal; }
+      .contact-box { padding: 30px 20px; }
+      .cta-row { flex-direction: column; align-items: stretch; }
+      .button { width: 100%; }
+      section { padding: 68px 0; }
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      cursor: pointer;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 12px;
+      box-shadow: 0 26px 80px rgba(0,0,0,0.5);
+      background: #fff;
+    }
+    .lightbox-hint {
+      margin-top: 14px;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.8rem;
+      letter-spacing: 0.03em;
+    }
+  </style>
 </head>
 <body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="#top">Tomas Maly</a>
+      <div class="nav-links">
+        <a href="#what-i-build">What I Build</a>
+        <a href="#about">About</a>
+        <a href="#selected-work">Work</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="https://www.linkedin.com/in/tomas-maly-0299661a9/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </nav>
+  </header>
 
-<!-- ─── HEADER ─── -->
-<header class="site-header">
-  <div class="header-inner">
-    <div class="header-left">
-      <img class="header-avatar" src="https://tmaly1980.github.io/index_files/me.jpg" alt="Tomas Maly">
-      <div class="header-name">Tomas Maly</div>
-      <div class="header-title">Senior Mobile &amp; Full-Stack Developer</div>
-      <p class="header-mission">25+ years shipping production software across mobile, web, and enterprise platforms. Focused on React Native/Expo, TypeScript, and full-stack JavaScript — with a specialty in offline-first mobile architecture, CI/CD automation, and brownfield migrations.</p>
-    </div>
-    <div class="header-right">
-      <a class="contact-link" href="https://www.upwork.com/freelancers/~01093b324f42db80eb" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        Upwork Profile
-      </a>
-      <a class="contact-link" href="https://github.com/tmaly1980" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        github.com/tmaly1980
-      </a>
-      <a class="contact-link" href="mailto:tmaly1980@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-        tmaly1980@gmail.com
-      </a>
-      <span class="contact-plain">Little Rock, AR &nbsp;·&nbsp; Central time</span>
-    </div>
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-visual" aria-label="Laptop and phone mockups showing APS screenshots">
+        <div class="device-stack" aria-hidden="true">
+          <div class="device laptop">
+            <div class="laptop-screen">
+              <img src="index_files/aps/admin-portal.png" alt="APS administrative portal screenshot">
+            </div>
+          </div>
+          <div class="device phone">
+            <div class="phone-screen">
+              <img src="index_files/aps/mobile-request.png" alt="APS mobile request app screenshot">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow">Independent software developer for local businesses</p>
+        <h1>Custom web and mobile software for your brick-and-mortar business</h1>
+        <p>I help established brick-and-mortar businesses streamline repetitive processes and communications through custom web and mobile software.</p>
+        <p>I turn everyday business operations into simpler online workflows — from customer requests, ordering, booking, scheduling, delivery and fulfillment to job updates, staff tools, service management, document and media sharing, administrative systems, and other custom automation that saves time and makes the business easier to run.</p>
+        <div class="availability">Based in Central Arkansas and Western North Carolina · Available in both Central and Eastern time zones</div>
+        <div class="cta-row">
+          <a class="button primary" href="#selected-work">View My Work</a>
+          <a class="button secondary" href="#contact">Discuss a Project</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="what-i-build" class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">What I Build</p>
+          <h2>Software that makes your business easier to run</h2>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Customer Requests &amp; Self-Service</h3>
+            <p>Online ordering, booking, intake, service requests, customer portals, and other tools that let customers get things done without making a phone call.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Scheduling &amp; Service Operations</h3>
+            <p>Scheduling, dispatch, appointments, job management, progress tracking, and tools that help staff manage work from request through completion.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Delivery &amp; Fulfillment</h3>
+            <p>Pickup, delivery, order fulfillment, tracking, driver workflows, and customer status updates.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Forms, Documents &amp; Media</h3>
+            <p>Detailed forms, structured information gathering, photos, videos, documents, reports, file uploads, and secure sharing.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Business Administration</h3>
+            <p>Administrative portals, dashboards, approvals, reporting, customer management, job processing, and other internal tools.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Communication &amp; Automation</h3>
+            <p>Status notifications, email and push updates, reminders, approvals, follow-ups, and automation that reduces repetitive communication and manual work.</p>
+          </article>
+        </div>
+
+        <p class="lead-note">If part of your business still relies heavily on phone calls, emails, spreadsheets, paperwork, or employees manually moving information from one place to another, there may be a simpler way to handle it.</p>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container about-layout">
+        <div class="about-photo">
+          <img src="index_files/me.jpg" alt="Portrait of Tomas Maly">
+        </div>
+
+        <div class="about-copy">
+          <p class="eyebrow">About Me</p>
+          <p>I've been building software for more than 25 years, working in environments ranging from Silicon Valley startups to large international companies.</p>
+          <p>What I've always enjoyed most isn't technology for its own sake. It's finding something that's frustrating, repetitive, or unnecessarily complicated and making it easier.</p>
+          <p>I like software that has a clear purpose: helping a customer place an order without making a phone call, giving an employee the information they need while they're on the road, keeping everyone updated without another round of emails, or turning paperwork and repetitive administrative work into a straightforward online process.</p>
+          <p>I also believe business software should stay as simple as the problem allows. My goal isn't to introduce more technology into your business. It's to use the right amount of technology to save time, reduce friction, and make the work easier for the people actually using it.</p>
+
+          <div class="detail-line">
+            <span>Tomas Maly · Independent Software Developer · 25+ years of experience</span>
+            <span>Central Arkansas + Western North Carolina</span>
+            <span>CST + EST availability</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="selected-work" class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Selected Work</p>
+          <h2>Projects that solve real business problems</h2>
+        </div>
+
+        <div class="project-showcase">
+          <article class="project">
+            <div class="project-media">
+              <img src="index_files/aps/admin-portal.png" alt="APS Environmental Services administrative portal screenshot" onclick="openLightbox(this.src)">
+              <div class="project-gallery" aria-label="APS screenshots">
+                <figure class="gallery-thumb" onclick="openLightbox(this.querySelector('img').src)">
+                  <img src="index_files/aps/form.png" alt="Detailed form">
+                  <figcaption>Detailed form</figcaption>
+                </figure>
+                <figure class="gallery-thumb" onclick="openLightbox(this.querySelector('img').src)">
+                  <img src="index_files/aps/status.png" alt="Status screen">
+                  <figcaption>Status screen</figcaption>
+                </figure>
+                <figure class="gallery-thumb" onclick="openLightbox(this.querySelector('img').src)">
+                  <img src="index_files/aps/scheduling.png" alt="Scheduling">
+                  <figcaption>Scheduling</figcaption>
+                </figure>
+                <figure class="gallery-thumb" onclick="openLightbox(this.querySelector('img').src)">
+                  <img src="index_files/aps/admin.png" alt="Admin request management">
+                  <figcaption>Admin request management</figcaption>
+                </figure>
+                <figure class="gallery-thumb" onclick="openLightbox(this.querySelector('img').src)">
+                  <img src="index_files/aps/report.png" alt="Report / document screen">
+                  <figcaption>Report / document screen</figcaption>
+                </figure>
+                <figure class="gallery-thumb" onclick="openLightbox(this.querySelector('img').src)">
+                  <img src="index_files/aps/customer-workflow.png" alt="Customer workflow">
+                  <figcaption>Customer workflow</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="project-copy">
+              <p class="project-kicker">APS Environmental Services</p>
+              <h3>Environmental testing requests and workflow management</h3>
+              <p>APS needed a better way for business customers to request environmental testing services and stay informed as those requests moved through the testing process.</p>
+              <p>I built a customer-facing mobile application for submitting detailed service requests, sharing photos and documents, and receiving status updates through push notifications and email.</p>
+              <p>A companion administrative website allows APS personnel to review and process incoming requests, schedule appointments, update job status, upload completed reports and supporting documents, and manage the workflow from submission through completion.</p>
+              <div class="tag-list">
+                <span class="tag">Detailed Service Requests</span>
+                <span class="tag">Customer Mobile App</span>
+                <span class="tag">Appointment Scheduling</span>
+                <span class="tag">Status Updates</span>
+                <span class="tag">Push &amp; Email Notifications</span>
+                <span class="tag">Photo &amp; Document Sharing</span>
+                <span class="tag">Administrative Portal</span>
+                <span class="tag">Report Delivery</span>
+              </div>
+
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-media lockatlas-media">
+              <div class="lockatlas-phones">
+                <div class="device phone lockatlas-phone" onclick="openLightbox(this.querySelector('img').src)" style="cursor:zoom-in">
+                  <div class="phone-screen">
+                    <img src="index_files/lockatlas/lock-analysis.png" alt="LockAtlas lock analysis screen">
+                  </div>
+                </div>
+                <div class="device phone lockatlas-phone" onclick="openLightbox(this.querySelector('img').src)" style="cursor:zoom-in">
+                  <div class="phone-screen">
+                    <img src="index_files/lockatlas/technician-eta.png" alt="LockAtlas technician ETA screen">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-copy">
+              <p class="project-kicker">LockAtlas</p>
+              <h3>On-demand locksmith requests and service fulfillment</h3>
+              <p>LockAtlas connects customers who need locksmith service with technicians who can perform the work.</p>
+              <p>Customers can submit detailed service requests, share photos, communicate with technicians, receive job updates, and track the progress of their request. Technicians receive nearby jobs, review customer information, communicate through the application, and manage the service workflow through completion.</p>
+              <p>The system also handles customer payments and technician payouts as part of the completed service process.</p>
+              <div class="tag-list">
+                <span class="tag">Service Requests</span>
+                <span class="tag">Customer &amp; Technician Apps</span>
+                <span class="tag">Job Matching</span>
+                <span class="tag">Photo Sharing</span>
+                <span class="tag">Messaging</span>
+                <span class="tag">Live Status Updates</span>
+                <span class="tag">Payments</span>
+                <span class="tag">Technician Workflow</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project project-wide-media">
+            <div class="project-media lockatlas-media">
+              <div class="lockatlas-phones">
+                <div class="device phone lockatlas-phone" onclick="openLightbox(this.querySelector('img').src)" style="cursor:zoom-in">
+                  <div class="phone-screen">
+                    <img src="index_files/spot/stop-details.png" alt="Spot Delivery stop details screen">
+                  </div>
+                </div>
+                <div class="device phone lockatlas-phone" onclick="openLightbox(this.querySelector('img').src)" style="cursor:zoom-in">
+                  <div class="phone-screen">
+                    <img src="index_files/spot/invoices.png" alt="Spot Delivery invoices screen">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-copy">
+              <p class="project-kicker">Spot Delivery Connect Mobile</p>
+              <h3>Offline-capable pickup and delivery operations</h3>
+              <p>Mobile software used by dry-cleaning delivery operations to manage customer pickups, garment scanning, deliveries, and day-to-day driver workflows.</p>
+              <p>The application was designed to continue functioning even when drivers lose internet access, allowing employees to keep working on the road and synchronize their activity once a connection becomes available.</p>
+              <p>I led a major rebuild of the application and its mobile workflow while working at Xplor Technologies.</p>
+              <div class="tag-list">
+                <span class="tag">Pickup &amp; Delivery</span>
+                <span class="tag">Driver Workflows</span>
+                <span class="tag">Garment Scanning</span>
+                <span class="tag">Offline Operation</span>
+                <span class="tag">Customer Orders</span>
+                <span class="tag">Route-Based Work</span>
+                <span class="tag">Mobile Field Tools</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="more-work" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">More Work</p>
+          <h2>Additional projects and business tools</h2>
+        </div>
+
+        <div class="mini-grid">
+          <article class="mini-card">
+            <div class="mini-thumb"><img src="index_files/other/truecoach.png" alt="TrueCoach screenshot" onclick="openLightbox(this.src)"></div>
+            <h3>TrueCoach</h3>
+            <p>Fitness coaching platform helping coaches and clients manage programs, communication, and progress without a manual back-and-forth process.</p>
+            <a href="https://apps.apple.com/us/app/truecoach/id1439127794" target="_blank" rel="noopener">App Store ↗</a>
+          </article>
+
+          <article class="mini-card">
+            <div class="mini-thumb"><img src="index_files/other/marianatek.png" alt="MarianaTek screenshot" onclick="openLightbox(this.src)"></div>
+            <h3>MarianaTek</h3>
+            <p>White-labeled fitness studio software for booking, billing, and scheduling across a large network of client businesses.</p>
+            <a href="https://apps.apple.com/us/app/barrys/id1389503012" target="_blank" rel="noopener">Example app ↗</a>
+          </article>
+
+          <article class="mini-card">
+            <div class="mini-thumb"><img src="index_files/other/zingfit.png" alt="ZingFit screenshot" onclick="openLightbox(this.src)"></div>
+            <h3>ZingFit</h3>
+            <p>Custom-branded scheduling and member-management software for fitness businesses that needed a repeatable, scalable client experience.</p>
+            <a href="https://apps.apple.com/us/app/off-duty-pilates/id6755767474" target="_blank" rel="noopener">Example app ↗</a>
+          </article>
+
+          <article class="mini-card">
+            <div class="mini-thumb"><img src="index_files/other/greenzone.png" alt="FitRoutine / GreenZone screenshot" onclick="openLightbox(this.src)"></div>
+            <h3>FitRoutine / GreenZone</h3>
+            <p>Wellness planning app that gave users a simple way to organize routines, habits, and personalized guidance around their goals.</p>
+            <a href="https://apps.apple.com/us/app/fitroutine-wellness-planner/id6741724873" target="_blank" rel="noopener">App Store ↗</a>
+          </article>
+
+          <article class="mini-card">
+            <div class="mini-thumb"><img src="index_files/other/players-pal.png" alt="Players Pal screenshot" onclick="openLightbox(this.src)"></div>
+            <h3>Players Pal</h3>
+            <p>Casino rewards and engagement app designed to give members a simpler way to find offers, redeem perks, and manage ongoing loyalty activity.</p>
+            <a href="https://apps.apple.com/us/app/players-pal/id6443823691" target="_blank" rel="noopener">App Store ↗</a>
+          </article>
+
+          <article class="mini-card">
+            <div class="mini-thumb"><img src="index_files/other/fluid-running.png" alt="Fluid Running screenshot" onclick="openLightbox(this.src)"></div>
+            <h3>Fluid Running</h3>
+            <p>Instructor-led aquatic workout software that simplified access to media, sessions, and guided fitness content on mobile devices.</p>
+            <a href="https://apps.apple.com/us/app/fluid-running/id1377251019" target="_blank" rel="noopener">App Store ↗</a>
+          </article>
+
+          <article class="mini-card">
+            <div class="mini-thumb"><img src="index_files/other/pocket-pushkah.png" alt="Pocket Pushkah screenshot" onclick="openLightbox(this.src)"></div>
+            <h3>Pocket Pushkah</h3>
+            <p>Branded donation and charity app used by organizations that needed a repeatable digital giving experience across multiple audiences.</p>
+            <a href="https://apps.apple.com/us/app/mytzedakah-pushka-chabad-ns/id1506259784" target="_blank" rel="noopener">App Store ↗</a>
+          </article>
+
+          <article class="mini-card">
+            <div class="mini-thumb"><img src="index_files/other/grower-analytics.png" alt="Grower Analytics screenshot" onclick="openLightbox(this.src)"></div>
+            <h3>Grower Analytics</h3>
+            <p>Data and reporting platform for growers who needed a clearer way to manage crop and yield information across multiple sites.</p>
+          </article>
+
+          <article class="mini-card">
+            <div class="mini-thumb"><img src="index_files/other/harmony-designs.png" alt="Harmony Designs screenshot" onclick="openLightbox(this.src)"></div>
+            <h3>Harmony Designs</h3>
+            <p>E-commerce and order-management system for a custom goods business that needed a clearer way to manage personalized orders and payments.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section section-alt">
+      <div class="container faq-wrap">
+        <div class="section-heading">
+          <p class="eyebrow">FAQ</p>
+          <h2>Questions business owners usually ask</h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" type="button">What kinds of software can you build?<span>+</span></button>
+            <div class="faq-answer" hidden>
+              <p>I build custom web and mobile software around existing business processes — including customer ordering and service requests, scheduling, job management, delivery and fulfillment, customer and staff portals, administrative tools, forms, notifications, document and media sharing, and other workflow automation.</p>
+              <p>If part of your business still depends heavily on phone calls, email, spreadsheets, paperwork, or staff manually moving information between systems, there may be an opportunity to make that process easier.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" type="button">Do I need to know what technology I need?<span>+</span></button>
+            <div class="faq-answer" hidden>
+              <p>No.</p>
+              <p>You should be able to explain how your business works, what you want to improve, and what customers or employees need to be able to do.</p>
+              <p>I'll determine the appropriate technical approach and explain any decisions that affect your business.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" type="button">What technologies do you work with?<span>+</span></button>
+            <div class="faq-answer" hidden>
+              <p>My current work primarily uses:</p>
+              <p>React, Next.js, React Native, Expo, TypeScript, Node.js, Supabase, PostgreSQL, Firebase, Swift, and SwiftUI.</p>
+              <p>I've worked with many other platforms and technologies during more than 25 years of software development, so I choose tools around the needs of the project rather than forcing every business into the same technical solution.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" type="button">What do I need to provide before we start?<span>+</span></button>
+            <div class="faq-answer" hidden>
+              <p>Mostly, I need to understand the business process.</p>
+              <p>Existing forms, spreadsheets, screenshots, documents, examples of how staff currently handle the work, branding assets, and access to systems that need to be integrated can all be useful.</p>
+              <p>You do not need to prepare a technical specification before contacting me.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" type="button">How do projects and payments work?<span>+</span></button>
+            <div class="faq-answer" hidden>
+              <p>Before development starts, we'll agree on the project scope, milestones, deliverables, and pricing.</p>
+              <p>I generally request 25% at the beginning of the project.</p>
+              <p>Projects are then divided into clearly defined milestones. For many shorter projects this means approximately four major milestones. Projects lasting three months or longer will generally use approximately two milestones per month so progress and payments stay predictable.</p>
+              <p>Milestone payments are due when the milestone is completed and before development begins on the next milestone.</p>
+              <p>I generally use Contra.com for payments because it is easy for clients to join and offers low-fee payment options.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" type="button">How soon will I see something working?<span>+</span></button>
+            <div class="faq-answer" hidden>
+              <p>I generally try to provide testable software within the first two weeks.</p>
+              <p>I prefer an ongoing feedback process rather than disappearing for months and revealing the finished product at the end.</p>
+              <p>You'll be able to see and use working software early so we can identify misunderstandings, improve workflows, and make smaller adjustments while those changes are still easy to incorporate.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" type="button">How long does a typical mobile application take?<span>+</span></button>
+            <div class="faq-answer" hidden>
+              <p>A basic mobile application with clear, well-defined features will commonly take approximately 4–6 weeks to develop.</p>
+              <p>More complex applications may take longer depending on the number of workflows, integrations, administrative features, or external services involved.</p>
+              <p>Mobile app review and release may require an additional 1–2 weeks, depending on Apple or Google review times and whether they request any changes.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" type="button">How are mobile apps tested before launch?<span>+</span></button>
+            <div class="faq-answer" hidden>
+              <p>Early mobile testing generally happens through Apple TestFlight and Google Play testing releases.</p>
+              <p>You'll be able to install the application on real phones, use it yourself, and provide feedback before anything is made publicly available through the app stores.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" type="button">What if I need changes during the project?<span>+</span></button>
+            <div class="faq-answer" hidden>
+              <p>Small adjustments and clarifications are a normal part of the testing and feedback process, and I generally incorporate reasonable in-scope changes as development progresses.</p>
+              <p>If a change significantly expands the original requirements or introduces a new feature that wasn't part of the agreed project, we'll define the additional work as a new milestone with its own scope and budget before I begin it.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" type="button">What happens if I find a bug after launch?<span>+</span></button>
+            <div class="faq-answer" hidden>
+              <p>Bugs in functionality included in the agreed project scope are covered for 30 days after launch, unless we agreed to different support terms before the project began.</p>
+              <p>If something that was included in the agreed requirements is not working correctly, I'll fix it during that period without treating it as a new feature.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" type="button">Who owns the software?<span>+</span></button>
+            <div class="faq-answer" hidden>
+              <p>You do.</p>
+              <p>Your project's source code will be stored in a GitHub repository that you own.</p>
+              <p>I'm also happy to sign reasonable NDA, confidentiality, intellectual-property, and work-for-hire documents as required by your business.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" type="button">What accounts will the software need?<span>+</span></button>
+            <div class="faq-answer" hidden>
+              <p>Depending on the project, the software may require accounts for hosting, databases, Apple or Google developer programs, email delivery, text-message delivery, payment processing, mapping, file storage, and other third-party services.</p>
+              <p>I'll explain what each account is for, why it is needed, and walk you through creating it.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" type="button">Can you connect the software to systems we already use?<span>+</span></button>
+            <div class="faq-answer" hidden>
+              <p>Often, yes.</p>
+              <p>If an existing service provides a usable API or other integration method, I can often connect new software to services your business already depends on instead of replacing everything.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" type="button">Will my employees be able to manage the software themselves?<span>+</span></button>
+            <div class="faq-answer" hidden>
+              <p>Where appropriate, yes.</p>
+              <p>I build administrative tools that allow employees to handle normal day-to-day operations themselves, such as processing customer requests, changing statuses, scheduling work, uploading documents, managing customers, and completing normal administrative tasks.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" type="button">What happens after the project is finished?<span>+</span></button>
+            <div class="faq-answer" hidden>
+              <p>The software remains yours, and there is no requirement to keep me on a monthly contract.</p>
+              <p>I'm available when you need additional features, integrations, maintenance, platform updates, workflow changes, or other improvements.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" type="button">When are you available for meetings?<span>+</span></button>
+            <div class="faq-answer" hidden>
+              <p>I work primarily with American companies and structure my availability so I can coordinate during normal U.S. business hours.</p>
+              <p>I'm based in both Central Arkansas and Western North Carolina, and I'm available across both Central and Eastern time zones.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" type="button">How quickly do you respond?<span>+</span></button>
+            <div class="faq-answer" hidden>
+              <p>I generally respond the same business day to messages received before approximately 3:00 PM Eastern Time.</p>
+              <p>Messages received later in the day will generally receive a response the following business morning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-box">
+          <p class="eyebrow">Contact</p>
+          <h2>Have a business process that should be easier?</h2>
+          <p>If there's something your customers or employees are still handling through phone calls, email, paperwork, spreadsheets, or disconnected tools, I'd be happy to talk about whether custom software could make it simpler.</p>
+          <div class="contact-cta-row">
+            <a class="button primary" href="mailto:tmaly1980@proton.me">Tell me about your project</a>
+            <a class="button contact-social-btn" href="https://www.linkedin.com/in/tomas-maly-0299661a9/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="button contact-social-btn" href="https://github.com/tmaly1980" target="_blank" rel="noopener">GitHub</a>
+          </div>
+          <div class="contact-link-row">
+            <a href="mailto:tmaly1980@proton.me">tmaly1980@proton.me</a>
+          </div>
+          <div class="small-note">Central Arkansas + Western North Carolina · CST + EST</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Tomas Maly
+  </footer>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Full size project screenshot">
+    <div class="lightbox-hint">tap anywhere to close</div>
   </div>
-</header>
 
-<!-- ─── SKILLS BAR ─── -->
-<div class="skills-bar">
-  <div class="skills-bar-inner">
-    <span class="skills-label">Stack</span>
-    <span class="skill-tag">React Native</span>
-    <span class="skill-tag">Expo</span>
-    <span class="skill-tag">TypeScript</span>
-    <span class="skill-tag">React</span>
-    <span class="skill-tag">Next.js</span>
-    <span class="skill-tag">Node.js</span>
-    <span class="skill-tag">Supabase</span>
-    <span class="skill-tag">PostgreSQL</span>
-    <span class="skill-tag">Firebase</span>
-    <span class="skill-tag">MobX</span>
-    <span class="skill-tag">Swift/SwiftUI</span>
-    <span class="skill-tag">CircleCI</span>
-    <span class="skill-tag">GitHub Actions</span>
-    <span class="skill-tag">Fastlane</span>
-  </div>
-</div>
+  <script>
+    const faqButtons = document.querySelectorAll('.faq-question');
+    faqButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!isOpen));
+        const answer = button.nextElementSibling;
+        answer.hidden = isOpen;
+      });
+    });
 
-<div class="main">
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = src;
+      lightbox.classList.add('open');
+    }
 
-  <!-- ─── SEPT 2025–PRESENT: FREELANCE ─── -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-title">Sept 2025–Present &mdash; Mobile Freelance</div>
-      <div class="section-rule"></div>
-    </div>
-    <p class="section-intro">Full-time freelance development across multiple concurrent projects, with an emphasis on performance-conscious architecture, scalable backend services, and AI integration. Built service marketplace platforms from the ground up — handling real-time data, payment processing, push notifications, and third-party API integrations — with deliberate choices around backend infrastructure, state management, and long-term maintainability at each stage.</p>
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('open');
+    }
 
-    <!-- Players Pal -->
-    <div class="project-row">
-      <div class="thumb-empty">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-      </div>
-      <div class="proj-content">
-        <div class="proj-title-line">
-          <span class="proj-name">Players Pal</span>
-          <a class="proj-link" href="https://apps.apple.com/us/app/players-pal/id6443823691" target="_blank" rel="noopener">App Store ↗</a>
-        </div>
-        <div class="proj-stack">React Native</div>
-        <p class="proj-desc">Casino rewards and engagement app with coupons, restaurant listings, and loyalty features for casino patrons.</p>
-      </div>
-    </div>
-
-    <!-- LockAtlas -->
-    <div class="project-row">
-      <div class="thumb-empty">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      </div>
-      <div class="proj-content">
-        <div class="proj-title-line">
-          <span class="proj-name">LockAtlas + LockAtlas Technician</span>
-          <a class="proj-link" href="https://apps.apple.com/us/app/lockatlas/id6757092954" target="_blank" rel="noopener">Customer App ↗</a>
-          <a class="proj-link" href="https://apps.apple.com/us/app/lockatlas-technician/id6757093075" target="_blank" rel="noopener">Technician App ↗</a>
-        </div>
-        <div class="proj-stack">React Native · Expo · TypeScript · Supabase · WebSockets · Stripe Connect · APNs/FCM v1 · OpenAI Vision</div>
-        <p class="proj-desc">Service technician request and fulfillment suite — two apps forming a locksmith service marketplace with live order tracking, AI photo analysis for job estimation, in-app chat, radius-based job matching, and Stripe Connect split payments. Live on the App Store.</p>
-      </div>
-    </div>
-
-    <!-- FitRoutine -->
-    <div class="project-row">
-      <div class="thumb-empty">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-      </div>
-      <div class="proj-content">
-        <div class="proj-title-line">
-          <span class="proj-name">FitRoutine / GreenZone</span>
-          <a class="proj-link" href="https://apps.apple.com/us/app/fitroutine-wellness-planner/id6741724873" target="_blank" rel="noopener">App Store ↗</a>
-        </div>
-        <div class="proj-stack">React Native · Expo · Supabase</div>
-        <p class="proj-desc">Individual health and wellness planner generating personalized weekly exercise, meal, and habit content based on user goals, with subscription monetization and guided meditations.</p>
-      </div>
-    </div>
-
-    <!-- Meti Taxi -->
-    <div class="project-row">
-      <div class="thumb-empty">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v5"/><path d="M14 17H9"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
-      </div>
-      <div class="proj-content">
-        <div class="proj-title-line">
-          <span class="proj-name">Meti Taxi</span>
-        </div>
-        <div class="proj-stack">React Native · Next.js (monorepo) · WebSockets · OpenStreetMap</div>
-        <p class="proj-desc">Scalable rideshare platform for Eastern Europe with a custom in-house map and routing engine built to control third-party mapping costs at scale. Paused due to regulatory changes affecting project funding.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── 2018–2025: XPLOR TECHNOLOGIES ─── -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-title">2018–2025 &mdash; Global Enterprise Mobile Development (Xplor Technologies)</div>
-      <div class="section-rule"></div>
-    </div>
-    <p class="section-intro">Cross-platform mobile engineering (React Native and SwiftUI/iOS) across four products, building and deploying CI/CD pipelines (CircleCI, GitHub Actions, Fastlane) for up to 400 white-label clients, leading teams of up to 5 developers across global time zones.</p>
-
-    <!-- Spot Delivery Connect Mobile -->
-    <div class="project-row">
-      <div class="thumb-empty">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      </div>
-      <div class="proj-content">
-        <div class="proj-title-line">
-          <span class="proj-name">Spot Delivery Connect Mobile</span>
-          <a class="proj-link" href="https://apps.apple.com/us/app/delivery-connect-mobile/id1222103653" target="_blank" rel="noopener">App Store ↗</a>
-        </div>
-        <div class="proj-stack">React Native · MobX (migrated from Xamarin)</div>
-        <p class="proj-desc">Led migration from Xamarin to React Native for a dry cleaning pickup-and-delivery logistics platform, including an offline-first driver app that keeps functioning without a network connection. Most complex and significant project of my career — introduced MobX for state management and rebuilt the architecture to support offline-mode garment scanning and delivery workflows.</p>
-      </div>
-    </div>
-
-    <!-- TrueCoach -->
-    <div class="project-row">
-      <div class="thumb-empty">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      </div>
-      <div class="proj-content">
-        <div class="proj-title-line">
-          <span class="proj-name">TrueCoach</span>
-          <a class="proj-link" href="https://apps.apple.com/us/app/truecoach/id1439127794" target="_blank" rel="noopener">App Store ↗</a>
-        </div>
-        <div class="proj-stack">Swift · SwiftUI</div>
-        <p class="proj-desc">Two-sided coach/client fitness coaching app with in-app chat and wearable/smartwatch integration for performance stats. Top-rated on the App Store with 33,000+ ratings.</p>
-      </div>
-    </div>
-
-    <!-- MarianaTek -->
-    <div class="project-row">
-      <div class="thumb-empty">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-      </div>
-      <div class="proj-content">
-        <div class="proj-title-line">
-          <span class="proj-name">MarianaTek</span>
-          <a class="proj-link" href="https://apps.apple.com/us/app/barrys/id1389503012" target="_blank" rel="noopener">Ex. white-label ↗</a>
-        </div>
-        <div class="proj-stack">Swift · SwiftUI</div>
-        <p class="proj-desc">Fitness studio booking, billing, and scheduling platform — white-labeled for approximately 400 clients including major fitness brands.</p>
-      </div>
-    </div>
-
-    <!-- ZingFit -->
-    <div class="project-row">
-      <div class="thumb-empty">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-      </div>
-      <div class="proj-content">
-        <div class="proj-title-line">
-          <span class="proj-name">ZingFit</span>
-          <a class="proj-link" href="https://apps.apple.com/us/app/off-duty-pilates/id6755767474" target="_blank" rel="noopener">Ex. white-label ↗</a>
-        </div>
-        <div class="proj-stack">React Native</div>
-        <p class="proj-desc">Build automation for fitness studios — custom branding and customer scheduling white-labeled for approximately 200 clients. Maintained CI/CD pipelines producing branded builds per client.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── 2018–2022: MOBILE FREELANCE ─── -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-title">2018–2022 &mdash; Mobile Freelance</div>
-      <div class="section-rule"></div>
-    </div>
-    <p class="section-intro">React Native cross-platform development focused on multimedia, payment processing, and multi-vendor white-labeling.</p>
-
-    <!-- Fluid Running -->
-    <div class="project-row">
-      <div class="thumb-empty">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-      </div>
-      <div class="proj-content">
-        <div class="proj-title-line">
-          <span class="proj-name">Fluid Running</span>
-          <a class="proj-link" href="https://apps.apple.com/us/app/fluid-running/id1377251019" target="_blank" rel="noopener">App Store ↗</a>
-        </div>
-        <div class="proj-stack">React Native</div>
-        <p class="proj-desc">Media player and workout guidance app for an aquatic fitness program, enabling instructor-led water running sessions with synced audio and video content.</p>
-      </div>
-    </div>
-
-    <!-- Pocket Pushkah -->
-    <div class="project-row">
-      <div class="thumb-empty">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-      </div>
-      <div class="proj-content">
-        <div class="proj-title-line">
-          <span class="proj-name">Pocket Pushkah</span>
-          <a class="proj-link" href="https://apps.apple.com/us/app/mytzedakah-pushka-chabad-ns/id1506259784" target="_blank" rel="noopener">App Store ↗</a>
-        </div>
-        <div class="proj-stack">React Native</div>
-        <p class="proj-desc">White-labeled faith-based charity and donation app, cloned and rebranded for 7–8 different organizations. Multi-tenant architecture with per-client branding and payment routing.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── 2000–2016: WEB DEVELOPMENT ─── -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-title">2000–2016 &mdash; Web Development</div>
-      <div class="section-rule"></div>
-    </div>
-    <p class="section-intro">PHP/Laravel, Ruby on Rails, and CakePHP full-stack web development across agricultural, nonprofit, eCommerce, and financial industries.</p>
-
-    <!-- Grower Analytics -->
-    <div class="project-row">
-      <div class="thumb-wrap" onclick="openLightbox('https://tmaly1980.github.io/index_files/Grower.png')">
-        <img src="https://tmaly1980.github.io/index_files/Grower.png" alt="Grower Analytics screenshot">
-      </div>
-      <div class="proj-content">
-        <div class="proj-title-line">
-          <span class="proj-name">Grower Analytics</span>
-        </div>
-        <div class="proj-stack">PHP · Laravel · MySQL</div>
-        <p class="proj-desc">Agricultural data analytics platform for crop and yield tracking. Multi-site SaaS with per-client data isolation and reporting dashboards for growers.</p>
-      </div>
-    </div>
-
-    <!-- Hopeful Press -->
-    <div class="project-row">
-      <div class="thumb-wrap" onclick="openLightbox('https://tmaly1980.github.io/index_files/HopefulPress.png')">
-        <img src="https://tmaly1980.github.io/index_files/HopefulPress.png" alt="Hopeful Press screenshot">
-      </div>
-      <div class="proj-content">
-        <div class="proj-title-line">
-          <span class="proj-name">Hopeful Press</span>
-        </div>
-        <div class="proj-stack">PHP · CakePHP · MySQL</div>
-        <p class="proj-desc">Web portal and CMS for animal rescue organizations — managing adoptable animals, volunteer coordination, and donation intake across multiple rescue groups.</p>
-      </div>
-    </div>
-
-    <!-- Harmony Designs -->
-    <div class="project-row">
-      <div class="thumb-wrap" onclick="openLightbox('https://tmaly1980.github.io/index_files/HarmonyDesigns.png')">
-        <img src="https://tmaly1980.github.io/index_files/HarmonyDesigns.png" alt="Harmony Designs screenshot">
-      </div>
-      <div class="proj-content">
-        <div class="proj-title-line">
-          <span class="proj-name">Harmony Designs</span>
-        </div>
-        <div class="proj-stack">PHP · Laravel · MySQL</div>
-        <p class="proj-desc">Personalized gifts eCommerce store with configurable product options, custom order management, and payment processing for a small handmade goods business.</p>
-      </div>
-    </div>
-
-    <!-- BetterThanTheBookstore -->
-    <div class="project-row">
-      <div class="thumb-wrap" onclick="openLightbox('https://tmaly1980.github.io/index_files/BTBS.png')">
-        <img src="https://tmaly1980.github.io/index_files/BTBS.png" alt="Better Than The Bookstore screenshot">
-      </div>
-      <div class="proj-content">
-        <div class="proj-title-line">
-          <span class="proj-name">BetterThanTheBookstore</span>
-        </div>
-        <div class="proj-stack">PHP · MySQL</div>
-        <p class="proj-desc">Online buy/sell marketplace for college textbooks. Peer-to-peer listings with search, pricing, and transaction management for campus communities.</p>
-      </div>
-    </div>
-
-    <!-- First Fashion -->
-    <div class="project-row">
-      <div class="thumb-wrap" onclick="openLightbox('https://tmaly1980.github.io/index_files/FirstFashion.png')">
-        <img src="https://tmaly1980.github.io/index_files/FirstFashion.png" alt="First Fashion screenshot">
-      </div>
-      <div class="proj-content">
-        <div class="proj-title-line">
-          <span class="proj-name">First Fashion</span>
-        </div>
-        <div class="proj-stack">Ruby on Rails · MySQL</div>
-        <p class="proj-desc">Fashion-oriented social network with user profiles, style feeds, likes, follows, and community discovery. Served as lead developer building the core social graph and feed infrastructure.</p>
-      </div>
-    </div>
-
-    <!-- MyTown USA -->
-    <div class="project-row">
-      <div class="thumb-wrap" onclick="openLightbox('https://tmaly1980.github.io/index_files/MyTownUSA.png')">
-        <img src="https://tmaly1980.github.io/index_files/MyTownUSA.png" alt="MyTown USA screenshot">
-      </div>
-      <div class="proj-content">
-        <div class="proj-title-line">
-          <span class="proj-name">MyTown USA</span>
-        </div>
-        <div class="proj-stack">PHP · MySQL</div>
-        <p class="proj-desc">Local business directory and community portal serving small-town markets with business listings, events, and hyperlocal community news.</p>
-      </div>
-    </div>
-  </section>
-
-</div><!-- /main -->
-
-<!-- ─── LIGHTBOX ─── -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img" src="" alt="Full size screenshot">
-  <div class="lightbox-hint">tap anywhere to close</div>
-</div>
-
-<script>
-function openLightbox(src) {
-  document.getElementById('lightbox-img').src = src;
-  document.getElementById('lightbox').classList.add('open');
-}
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
-}
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeLightbox();
-});
-</script>
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeLightbox();
+    });
+  </script>
 </body>
 </html>
