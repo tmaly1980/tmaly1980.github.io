@@ -187,7 +187,7 @@
     .phone {
       right: 1px;
       bottom: 0;
-      width: 190px;
+      width: 160px;
       height: 350px;
       border-radius: 30px;
       padding: 12px 10px 14px;
@@ -200,8 +200,8 @@
       top: 12px;
       left: 50%;
       transform: translateX(-50%);
-      width: 104px;
-      height: 20px;
+      width: 80px;
+      height: 16px;
       background: rgba(18, 33, 41, 0.8);
       border-radius: 999px;
     }
@@ -563,7 +563,21 @@
     }
 
     .faq-wrap {
-      max-width: 880px;
+      max-width: none;
+    }
+    .faq-columns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 32px;
+      align-items: start;
+    }
+    .faq-column-heading {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--teal-strong);
+      margin: 0 0 16px;
+      letter-spacing: -0.02em;
     }
     .faq-list {
       display: grid;
@@ -677,6 +691,7 @@
       .hero { grid-template-columns: 1fr; padding-top: 40px; min-height: auto; }
       .hero-copy { max-width: none; }
       .services-grid, .mini-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .faq-columns { grid-template-columns: 1fr; }
       .project { grid-template-columns: 1fr; }
       .project:nth-child(even) .project-media,
       .project:nth-child(even) .project-copy { order: initial; }
@@ -759,7 +774,6 @@
       </div>
 
       <div class="hero-copy">
-        <p class="eyebrow">Independent software developer for local businesses</p>
         <h1>Custom web and mobile software for your brick-and-mortar business</h1>
         <p>I help established brick-and-mortar businesses streamline repetitive processes and communications through custom web and mobile software.</p>
         <p>I turn everyday business operations into simpler online workflows — from customer requests, ordering, booking, scheduling, delivery and fulfillment to job updates, staff tools, service management, document and media sharing, administrative systems, and other custom automation that saves time and makes the business easier to run.</p>
@@ -1044,151 +1058,154 @@
           <h2>Questions business owners usually ask</h2>
         </div>
 
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" type="button">What kinds of software can you build?<span>+</span></button>
-            <div class="faq-answer" hidden>
-              <p>I build custom web and mobile software around existing business processes — including customer ordering and service requests, scheduling, job management, delivery and fulfillment, customer and staff portals, administrative tools, forms, notifications, document and media sharing, and other workflow automation.</p>
-              <p>If part of your business still depends heavily on phone calls, email, spreadsheets, paperwork, or staff manually moving information between systems, there may be an opportunity to make that process easier.</p>
+        <div class="faq-columns">
+
+          <div>
+            <p class="faq-column-heading">Working together</p>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" type="button">What kinds of software can you build?<span>+</span></button>
+                <div class="faq-answer" hidden>
+                  <p>I build custom web and mobile software around existing business processes — including customer ordering and service requests, scheduling, job management, delivery and fulfillment, customer and staff portals, administrative tools, forms, notifications, document and media sharing, and other workflow automation.</p>
+                  <p>If part of your business still depends heavily on phone calls, email, spreadsheets, paperwork, or staff manually moving information between systems, there may be an opportunity to make that process easier.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" type="button">Do I need to know what technology I need?<span>+</span></button>
+                <div class="faq-answer" hidden>
+                  <p>No.</p>
+                  <p>You should be able to explain how your business works, what you want to improve, and what customers or employees need to be able to do.</p>
+                  <p>I'll determine the appropriate technical approach and explain any decisions that affect your business.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" type="button">What do I need to provide before we start?<span>+</span></button>
+                <div class="faq-answer" hidden>
+                  <p>Mostly, I need to understand the business process.</p>
+                  <p>Existing forms, spreadsheets, screenshots, documents, examples of how staff currently handle the work, branding assets, and access to systems that need to be integrated can all be useful.</p>
+                  <p>You do not need to prepare a technical specification before contacting me.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" type="button">How do projects and payments work?<span>+</span></button>
+                <div class="faq-answer" hidden>
+                  <p>Before development starts, we'll agree on the project scope, milestones, deliverables, and pricing.</p>
+                  <p>I generally request 25% at the beginning of the project.</p>
+                  <p>Projects are then divided into clearly defined milestones. For many shorter projects this means approximately four major milestones. Projects lasting three months or longer will generally use approximately two milestones per month so progress and payments stay predictable.</p>
+                  <p>Milestone payments are due when the milestone is completed and before development begins on the next milestone.</p>
+                  <p>I generally use Contra.com for payments because it is easy for clients to join and offers low-fee payment options.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" type="button">How soon will I see something working?<span>+</span></button>
+                <div class="faq-answer" hidden>
+                  <p>I generally try to provide testable software within the first two weeks.</p>
+                  <p>I prefer an ongoing feedback process rather than disappearing for months and revealing the finished product at the end.</p>
+                  <p>You'll be able to see and use working software early so we can identify misunderstandings, improve workflows, and make smaller adjustments while those changes are still easy to incorporate.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" type="button">What if I need changes during the project?<span>+</span></button>
+                <div class="faq-answer" hidden>
+                  <p>Small adjustments and clarifications are a normal part of the testing and feedback process, and I generally incorporate reasonable in-scope changes as development progresses.</p>
+                  <p>If a change significantly expands the original requirements or introduces a new feature that wasn't part of the agreed project, we'll define the additional work as a new milestone with its own scope and budget before I begin it.</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" type="button">Do I need to know what technology I need?<span>+</span></button>
-            <div class="faq-answer" hidden>
-              <p>No.</p>
-              <p>You should be able to explain how your business works, what you want to improve, and what customers or employees need to be able to do.</p>
-              <p>I'll determine the appropriate technical approach and explain any decisions that affect your business.</p>
+          <div>
+            <p class="faq-column-heading">Technical &amp; project details</p>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" type="button">What technologies do you work with?<span>+</span></button>
+                <div class="faq-answer" hidden>
+                  <p>My current work primarily uses:</p>
+                  <p>React, Next.js, React Native, Expo, TypeScript, Node.js, Supabase, PostgreSQL, Firebase, Swift, and SwiftUI.</p>
+                  <p>I've worked with many other platforms and technologies during more than 25 years of software development, so I choose tools around the needs of the project rather than forcing every business into the same technical solution.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" type="button">How long does a typical mobile application take?<span>+</span></button>
+                <div class="faq-answer" hidden>
+                  <p>A basic mobile application with clear, well-defined features will commonly take approximately 4–6 weeks to develop.</p>
+                  <p>More complex applications may take longer depending on the number of workflows, integrations, administrative features, or external services involved.</p>
+                  <p>Mobile app review and release may require an additional 1–2 weeks, depending on Apple or Google review times and whether they request any changes.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" type="button">How are mobile apps tested before launch?<span>+</span></button>
+                <div class="faq-answer" hidden>
+                  <p>Early mobile testing generally happens through Apple TestFlight and Google Play testing releases.</p>
+                  <p>You'll be able to install the application on real phones, use it yourself, and provide feedback before anything is made publicly available through the app stores.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" type="button">What accounts will the software need?<span>+</span></button>
+                <div class="faq-answer" hidden>
+                  <p>Depending on the project, the software may require accounts for hosting, databases, Apple or Google developer programs, email delivery, text-message delivery, payment processing, mapping, file storage, and other third-party services.</p>
+                  <p>I'll explain what each account is for, why it is needed, and walk you through creating it.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" type="button">Can you connect the software to systems we already use?<span>+</span></button>
+                <div class="faq-answer" hidden>
+                  <p>Often, yes.</p>
+                  <p>If an existing service provides a usable API or other integration method, I can often connect new software to services your business already depends on instead of replacing everything.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" type="button">Will my employees be able to manage the software themselves?<span>+</span></button>
+                <div class="faq-answer" hidden>
+                  <p>Where appropriate, yes.</p>
+                  <p>I build administrative tools that allow employees to handle normal day-to-day operations themselves, such as processing customer requests, changing statuses, scheduling work, uploading documents, managing customers, and completing normal administrative tasks.</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" type="button">What technologies do you work with?<span>+</span></button>
-            <div class="faq-answer" hidden>
-              <p>My current work primarily uses:</p>
-              <p>React, Next.js, React Native, Expo, TypeScript, Node.js, Supabase, PostgreSQL, Firebase, Swift, and SwiftUI.</p>
-              <p>I've worked with many other platforms and technologies during more than 25 years of software development, so I choose tools around the needs of the project rather than forcing every business into the same technical solution.</p>
+          <div>
+            <p class="faq-column-heading">Ownership &amp; ongoing</p>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" type="button">Who owns the software?<span>+</span></button>
+                <div class="faq-answer" hidden>
+                  <p>You do.</p>
+                  <p>Your project's source code will be stored in a GitHub repository that you own.</p>
+                  <p>I'm also happy to sign reasonable NDA, confidentiality, intellectual-property, and work-for-hire documents as required by your business.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" type="button">What happens if I find a bug after launch?<span>+</span></button>
+                <div class="faq-answer" hidden>
+                  <p>Bugs in functionality included in the agreed project scope are covered for 30 days after launch, unless we agreed to different support terms before the project began.</p>
+                  <p>If something that was included in the agreed requirements is not working correctly, I'll fix it during that period without treating it as a new feature.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" type="button">What happens after the project is finished?<span>+</span></button>
+                <div class="faq-answer" hidden>
+                  <p>The software remains yours, and there is no requirement to keep me on a monthly contract.</p>
+                  <p>I'm available when you need additional features, integrations, maintenance, platform updates, workflow changes, or other improvements.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" type="button">When are you available for meetings?<span>+</span></button>
+                <div class="faq-answer" hidden>
+                  <p>I work primarily with American companies and structure my availability so I can coordinate during normal U.S. business hours.</p>
+                  <p>I'm based in both Central Arkansas and Western North Carolina, and I'm available across both Central and Eastern time zones.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" type="button">How quickly do you respond?<span>+</span></button>
+                <div class="faq-answer" hidden>
+                  <p>I generally respond the same business day to messages received before approximately 3:00 PM Eastern Time.</p>
+                  <p>Messages received later in the day will generally receive a response the following business morning.</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" type="button">What do I need to provide before we start?<span>+</span></button>
-            <div class="faq-answer" hidden>
-              <p>Mostly, I need to understand the business process.</p>
-              <p>Existing forms, spreadsheets, screenshots, documents, examples of how staff currently handle the work, branding assets, and access to systems that need to be integrated can all be useful.</p>
-              <p>You do not need to prepare a technical specification before contacting me.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" type="button">How do projects and payments work?<span>+</span></button>
-            <div class="faq-answer" hidden>
-              <p>Before development starts, we'll agree on the project scope, milestones, deliverables, and pricing.</p>
-              <p>I generally request 25% at the beginning of the project.</p>
-              <p>Projects are then divided into clearly defined milestones. For many shorter projects this means approximately four major milestones. Projects lasting three months or longer will generally use approximately two milestones per month so progress and payments stay predictable.</p>
-              <p>Milestone payments are due when the milestone is completed and before development begins on the next milestone.</p>
-              <p>I generally use Contra.com for payments because it is easy for clients to join and offers low-fee payment options.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" type="button">How soon will I see something working?<span>+</span></button>
-            <div class="faq-answer" hidden>
-              <p>I generally try to provide testable software within the first two weeks.</p>
-              <p>I prefer an ongoing feedback process rather than disappearing for months and revealing the finished product at the end.</p>
-              <p>You'll be able to see and use working software early so we can identify misunderstandings, improve workflows, and make smaller adjustments while those changes are still easy to incorporate.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" type="button">How long does a typical mobile application take?<span>+</span></button>
-            <div class="faq-answer" hidden>
-              <p>A basic mobile application with clear, well-defined features will commonly take approximately 4–6 weeks to develop.</p>
-              <p>More complex applications may take longer depending on the number of workflows, integrations, administrative features, or external services involved.</p>
-              <p>Mobile app review and release may require an additional 1–2 weeks, depending on Apple or Google review times and whether they request any changes.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" type="button">How are mobile apps tested before launch?<span>+</span></button>
-            <div class="faq-answer" hidden>
-              <p>Early mobile testing generally happens through Apple TestFlight and Google Play testing releases.</p>
-              <p>You'll be able to install the application on real phones, use it yourself, and provide feedback before anything is made publicly available through the app stores.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" type="button">What if I need changes during the project?<span>+</span></button>
-            <div class="faq-answer" hidden>
-              <p>Small adjustments and clarifications are a normal part of the testing and feedback process, and I generally incorporate reasonable in-scope changes as development progresses.</p>
-              <p>If a change significantly expands the original requirements or introduces a new feature that wasn't part of the agreed project, we'll define the additional work as a new milestone with its own scope and budget before I begin it.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" type="button">What happens if I find a bug after launch?<span>+</span></button>
-            <div class="faq-answer" hidden>
-              <p>Bugs in functionality included in the agreed project scope are covered for 30 days after launch, unless we agreed to different support terms before the project began.</p>
-              <p>If something that was included in the agreed requirements is not working correctly, I'll fix it during that period without treating it as a new feature.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" type="button">Who owns the software?<span>+</span></button>
-            <div class="faq-answer" hidden>
-              <p>You do.</p>
-              <p>Your project's source code will be stored in a GitHub repository that you own.</p>
-              <p>I'm also happy to sign reasonable NDA, confidentiality, intellectual-property, and work-for-hire documents as required by your business.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" type="button">What accounts will the software need?<span>+</span></button>
-            <div class="faq-answer" hidden>
-              <p>Depending on the project, the software may require accounts for hosting, databases, Apple or Google developer programs, email delivery, text-message delivery, payment processing, mapping, file storage, and other third-party services.</p>
-              <p>I'll explain what each account is for, why it is needed, and walk you through creating it.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" type="button">Can you connect the software to systems we already use?<span>+</span></button>
-            <div class="faq-answer" hidden>
-              <p>Often, yes.</p>
-              <p>If an existing service provides a usable API or other integration method, I can often connect new software to services your business already depends on instead of replacing everything.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" type="button">Will my employees be able to manage the software themselves?<span>+</span></button>
-            <div class="faq-answer" hidden>
-              <p>Where appropriate, yes.</p>
-              <p>I build administrative tools that allow employees to handle normal day-to-day operations themselves, such as processing customer requests, changing statuses, scheduling work, uploading documents, managing customers, and completing normal administrative tasks.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" type="button">What happens after the project is finished?<span>+</span></button>
-            <div class="faq-answer" hidden>
-              <p>The software remains yours, and there is no requirement to keep me on a monthly contract.</p>
-              <p>I'm available when you need additional features, integrations, maintenance, platform updates, workflow changes, or other improvements.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" type="button">When are you available for meetings?<span>+</span></button>
-            <div class="faq-answer" hidden>
-              <p>I work primarily with American companies and structure my availability so I can coordinate during normal U.S. business hours.</p>
-              <p>I'm based in both Central Arkansas and Western North Carolina, and I'm available across both Central and Eastern time zones.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" type="button">How quickly do you respond?<span>+</span></button>
-            <div class="faq-answer" hidden>
-              <p>I generally respond the same business day to messages received before approximately 3:00 PM Eastern Time.</p>
-              <p>Messages received later in the day will generally receive a response the following business morning.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -1227,9 +1244,14 @@
     faqButtons.forEach((button) => {
       button.addEventListener('click', () => {
         const isOpen = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', String(!isOpen));
-        const answer = button.nextElementSibling;
-        answer.hidden = isOpen;
+        faqButtons.forEach((b) => {
+          b.setAttribute('aria-expanded', 'false');
+          b.nextElementSibling.hidden = true;
+        });
+        if (!isOpen) {
+          button.setAttribute('aria-expanded', 'true');
+          button.nextElementSibling.hidden = false;
+        }
       });
     });
 
