@@ -560,16 +560,61 @@
       overflow: hidden;
       border: 1px solid var(--border);
       background: var(--surface-alt);
+      flex-shrink: 0;
     }
     .mini-thumb img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       object-position: center;
       display: block;
       cursor: zoom-in;
-      padding: 0 12px;
-      background: #e8ecec;
+    }
+    .mini-card-horizontal {
+      display: flex;
+      gap: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    .mini-card-horizontal .mini-thumb {
+      width: 80px;
+      height: 160px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 12px 0 12px 12px;
+      flex-shrink: 0;
+      align-self: center;
+    }
+    .mini-card-horizontal .mini-thumb img {
+      padding: 0;
+      object-fit: cover;
+      object-position: center;
+      height: 100%;
+      border-radius: 11px;
+    }
+    .mini-card-horizontal .mini-body {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
+    .mini-card-horizontal h3 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+    .mini-card-horizontal p {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+    .mini-card-horizontal .mini-card-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: var(--teal-strong);
+      font-weight: 700;
+      text-decoration: none;
     }
     .mini-card a {
       display: inline-block;
@@ -1055,53 +1100,67 @@
         </div>
 
         <div class="mini-grid">
-          <article class="mini-card">
+          <article class="mini-card mini-card-horizontal">
             <div class="mini-thumb"><img src="index_files/other/zingfit.png" alt="ZingFit screenshot" onclick="openLightbox(this.src)"></div>
-            <h3>ZingFit <span class="mini-date">2016–2023</span></h3>
-            <p>Custom-branded scheduling and member-management software for fitness businesses that needed a repeatable, scalable client experience.</p>
-            <a href="https://apps.apple.com/us/app/off-duty-pilates/id6755767474" target="_blank" rel="noopener">Example app ↗</a>
+            <div class="mini-body">
+              <h3>ZingFit <span class="mini-date">2016–2023</span></h3>
+              <p>Custom-branded scheduling and member-management software for fitness businesses that needed a repeatable, scalable client experience.</p>
+              <a class="mini-card-link" href="https://apps.apple.com/us/app/off-duty-pilates/id6755767474" target="_blank" rel="noopener">Example app ↗</a>
+            </div>
           </article>
 
-          <article class="mini-card">
+          <article class="mini-card mini-card-horizontal">
             <div class="mini-thumb"><img src="index_files/other/marianatek.png" alt="MarianaTek screenshot" onclick="openLightbox(this.src)"></div>
-            <h3>MarianaTek <span class="mini-date">2021–2023</span></h3>
-            <p>White-labeled fitness studio software for booking, billing, and scheduling across a large network of client businesses.</p>
-            <a href="https://apps.apple.com/us/app/barrys/id1389503012" target="_blank" rel="noopener">Example app ↗</a>
+            <div class="mini-body">
+              <h3>MarianaTek <span class="mini-date">2021–2023</span></h3>
+              <p>White-labeled fitness studio software for booking, billing, and scheduling across a large network of client businesses.</p>
+              <a class="mini-card-link" href="https://apps.apple.com/us/app/barrys/id1389503012" target="_blank" rel="noopener">Example app ↗</a>
+            </div>
           </article>
 
-          <article class="mini-card">
+          <article class="mini-card mini-card-horizontal">
             <div class="mini-thumb"><img src="index_files/other/truecoach.png" alt="TrueCoach screenshot" onclick="openLightbox(this.src)"></div>
-            <h3>TrueCoach <span class="mini-date">2023–2024</span></h3>
-            <p>Fitness coaching platform helping coaches and clients manage programs, communication, and progress without a manual back-and-forth process.</p>
-            <a href="https://apps.apple.com/us/app/truecoach/id1439127794" target="_blank" rel="noopener">App Store ↗</a>
+            <div class="mini-body">
+              <h3>TrueCoach <span class="mini-date">2023–2024</span></h3>
+              <p>Fitness coaching platform helping coaches and clients manage programs, communication, and progress without a manual back-and-forth process.</p>
+              <a class="mini-card-link" href="https://apps.apple.com/us/app/truecoach/id1439127794" target="_blank" rel="noopener">App Store ↗</a>
+            </div>
           </article>
 
-          <article class="mini-card">
+          <article class="mini-card mini-card-horizontal">
             <div class="mini-thumb"><img src="index_files/other/players-pal.png" alt="Players Pal screenshot" onclick="openLightbox(this.src)"></div>
-            <h3>Players Pal <span class="mini-date">2025</span></h3>
-            <p>Casino rewards and engagement app designed to give members a simpler way to find offers, redeem perks, and manage ongoing loyalty activity.</p>
-            <a href="https://apps.apple.com/us/app/players-pal/id6443823691" target="_blank" rel="noopener">App Store ↗</a>
+            <div class="mini-body">
+              <h3>Players Pal <span class="mini-date">2025</span></h3>
+              <p>Casino rewards and engagement app designed to give members a simpler way to find offers, redeem perks, and manage ongoing loyalty activity.</p>
+              <a class="mini-card-link" href="https://apps.apple.com/us/app/players-pal/id6443823691" target="_blank" rel="noopener">App Store ↗</a>
+            </div>
           </article>
 
-          <article class="mini-card">
+          <article class="mini-card mini-card-horizontal">
             <div class="mini-thumb"><img src="index_files/other/greenzone.png" alt="FitRoutine / GreenZone screenshot" onclick="openLightbox(this.src)"></div>
-            <h3>FitRoutine / GreenZone <span class="mini-date">2025</span></h3>
-            <p>Wellness planning app that gave users a simple way to organize routines, habits, and personalized guidance around their goals.</p>
-            <a href="https://apps.apple.com/us/app/fitroutine-wellness-planner/id6741724873" target="_blank" rel="noopener">App Store ↗</a>
+            <div class="mini-body">
+              <h3>FitRoutine / GreenZone <span class="mini-date">2025</span></h3>
+              <p>Wellness planning app that gave users a simple way to organize routines, habits, and personalized guidance around their goals.</p>
+              <a class="mini-card-link" href="https://apps.apple.com/us/app/fitroutine-wellness-planner/id6741724873" target="_blank" rel="noopener">App Store ↗</a>
+            </div>
           </article>
 
-          <article class="mini-card">
+          <article class="mini-card mini-card-horizontal">
             <div class="mini-thumb"><img src="index_files/other/fluid-running.png" alt="Fluid Running screenshot" onclick="openLightbox(this.src)"></div>
-            <h3>Fluid Running</h3>
-            <p>Instructor-led aquatic workout software that simplified access to media, sessions, and guided fitness content on mobile devices.</p>
-            <a href="https://apps.apple.com/us/app/fluid-running/id1377251019" target="_blank" rel="noopener">App Store ↗</a>
+            <div class="mini-body">
+              <h3>Fluid Running</h3>
+              <p>Instructor-led aquatic workout software that simplified access to media, sessions, and guided fitness content on mobile devices.</p>
+              <a class="mini-card-link" href="https://apps.apple.com/us/app/fluid-running/id1377251019" target="_blank" rel="noopener">App Store ↗</a>
+            </div>
           </article>
 
-          <article class="mini-card">
+          <article class="mini-card mini-card-horizontal">
             <div class="mini-thumb"><img src="index_files/other/pocket-pushkah.png" alt="Pocket Pushkah screenshot" onclick="openLightbox(this.src)"></div>
-            <h3>Pocket Pushkah</h3>
-            <p>Branded donation and charity app used by organizations that needed a repeatable digital giving experience across multiple audiences.</p>
-            <a href="https://apps.apple.com/us/app/mytzedakah-pushka-chabad-ns/id1506259784" target="_blank" rel="noopener">App Store ↗</a>
+            <div class="mini-body">
+              <h3>Pocket Pushkah</h3>
+              <p>Branded donation and charity app used by organizations that needed a repeatable digital giving experience across multiple audiences.</p>
+              <a class="mini-card-link" href="https://apps.apple.com/us/app/mytzedakah-pushka-chabad-ns/id1506259784" target="_blank" rel="noopener">App Store ↗</a>
+            </div>
           </article>
 
           <article class="mini-card">
