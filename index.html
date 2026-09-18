@@ -490,6 +490,18 @@
       object-fit: cover;
       object-position: top;
     }
+    .gallery-thumb-pending {
+      background: linear-gradient(135deg, rgba(15,118,110,0.06), rgba(255,255,255,0.8));
+      border: 1px dashed rgba(15, 118, 110, 0.3);
+      justify-content: center;
+      align-items: center;
+    }
+    .gallery-thumb-pending figcaption {
+      color: var(--muted);
+      font-style: italic;
+      text-align: center;
+      padding: 8px;
+    }
     .gallery-thumb {
       margin: 0;
       border-radius: 16px;
@@ -758,7 +770,7 @@
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
         <a class="nav-cta" href="https://www.linkedin.com/in/tomas-maly-0299661a9/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="button primary" href="resume/" style="font-size:0.9rem;min-height:38px;padding:0 16px;">Resume</a>
+        <a class="button primary" href="index_files/tomas-maly-resume.pdf" style="font-size:0.9rem;min-height:38px;padding:0 16px;">Resume</a>
       </div>
     </nav>
   </header>
@@ -866,6 +878,55 @@
         </div>
 
         <div class="project-showcase">
+          <article class="project">
+            <div class="project-media">
+              <img src="index_files/myindiepro/homepage.png" alt="MyIndiePro customer-facing homepage screenshot" onclick="openLightbox(this.src)">
+              <div class="project-gallery" aria-label="MyIndiePro screenshots">
+                <figure class="gallery-thumb" onclick="openLightbox(this.querySelector('img').src)">
+                  <img src="index_files/myindiepro/estimate-form.png" alt="Estimate / Quote">
+                  <figcaption>Estimate / Quote</figcaption>
+                </figure>
+                <figure class="gallery-thumb" onclick="openLightbox(this.querySelector('img').src)">
+                  <img src="index_files/myindiepro/recent-work.png" alt="Recent Work">
+                  <figcaption>Recent Work</figcaption>
+                </figure>
+                <figure class="gallery-thumb" onclick="openLightbox(this.querySelector('img').src)">
+                  <img src="index_files/myindiepro/reviews.png" alt="Reviews">
+                  <figcaption>Reviews</figcaption>
+                </figure>
+                <figure class="gallery-thumb gallery-thumb-pending">
+                  <figcaption>Calendar &amp; Booking</figcaption>
+                </figure>
+                <figure class="gallery-thumb gallery-thumb-pending">
+                  <figcaption>Messaging</figcaption>
+                </figure>
+                <figure class="gallery-thumb gallery-thumb-pending">
+                  <figcaption>Estimate Management</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="project-copy">
+              <p class="project-kicker">MyIndiePro</p>
+              <h3>Full-stack service-business platform for independent local providers</h3>
+              <p>A complete platform I designed and built from the ground up for independent service businesses — mobile mechanics, handyman services, tree work, material delivery, and other local trades.</p>
+              <p>Providers get a professional customer-facing presence with online quoting, scheduling, and messaging built in. Customers can request estimates through multi-step workflows, book appointments, communicate with their provider, and leave detailed reviews. Providers manage their business — quotes, jobs, calendar, and customer communication — through a single interface.</p>
+              <p>The platform is designed around flexible service workflows rather than a single trade, so it can be adapted to different business types without rebuilding core functionality.</p>
+              <div class="tag-list">
+                <span class="tag">Multi-step Estimate Workflows</span>
+                <span class="tag">Online Scheduling</span>
+                <span class="tag">Customer &amp; Provider Messaging</span>
+                <span class="tag">Job Management</span>
+                <span class="tag">Provider Profiles</span>
+                <span class="tag">Recent Work Portfolios</span>
+                <span class="tag">Reviews &amp; Ratings</span>
+                <span class="tag">Customer &amp; Provider Interfaces</span>
+              </div>
+              <div class="cta-row" style="margin-top:20px;">
+                <a class="button primary" href="https://myindiepro.com" target="_blank" rel="noopener">View Homepage ↗</a>
+              </div>
+            </div>
+          </article>
+
           <article class="project">
             <div class="project-media">
               <img src="index_files/aps/admin-portal.png" alt="APS Environmental Services administrative portal screenshot" onclick="openLightbox(this.src)">
@@ -1227,7 +1288,7 @@
             <a class="button primary" href="mailto:tmaly1980@gmail.com">Tell me about your project</a>
             <a class="button contact-social-btn" href="https://www.linkedin.com/in/tomas-maly-0299661a9/" target="_blank" rel="noopener">LinkedIn</a>
             <a class="button contact-social-btn" href="https://github.com/tmaly1980" target="_blank" rel="noopener">GitHub</a>
-            <a class="button contact-social-btn" href="resume/">Resume</a>
+            <a class="button contact-social-btn" href="index_files/tomas-maly-resume.pdf">Resume</a>
           </div>
           <div class="contact-link-row">
             <a href="mailto:tmaly1980@gmail.com">tmaly1980@gmail.com</a>
