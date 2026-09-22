@@ -743,6 +743,49 @@
       font-size: 0.9rem;
     }
 
+    .my-role {
+      margin-top: 20px;
+      padding: 14px 16px;
+      border-left: 3px solid var(--teal-mid);
+      background: var(--teal-soft);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.95rem;
+      color: var(--muted-strong);
+      line-height: 1.65;
+    }
+    .my-role strong {
+      color: var(--teal-strong);
+      font-weight: 700;
+    }
+
+    .lifecycle-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 28px;
+      margin-top: 20px;
+    }
+    .lifecycle-item {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 0.96rem;
+      color: var(--muted-strong);
+      font-weight: 500;
+    }
+    .lifecycle-item::before {
+      content: "→";
+      flex-shrink: 0;
+      color: var(--teal-strong);
+      font-weight: 700;
+    }
+    .lifecycle-intro {
+      max-width: 640px;
+    }
+    .lifecycle-intro p {
+      font-size: 1.04rem;
+      line-height: 1.78;
+    }
+
     footer {
       padding: 12px 0 32px;
       text-align: center;
@@ -892,6 +935,28 @@
       </div>
     </section>
 
+    <section id="from-idea-through-launch" class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">What I Handle</p>
+          <h2>From idea through launch</h2>
+        </div>
+        <div class="lifecycle-intro">
+          <p>A client can bring me a real-world business problem and I can take responsibility for turning it into a working production system. I commonly work across the entire project rather than one isolated piece of it.</p>
+        </div>
+        <div class="lifecycle-grid">
+          <span class="lifecycle-item">Understanding the existing business process and defining a simpler workflow</span>
+          <span class="lifecycle-item">Product and interface design</span>
+          <span class="lifecycle-item">Web and mobile development</span>
+          <span class="lifecycle-item">Database and system design</span>
+          <span class="lifecycle-item">Payments and third-party integrations</span>
+          <span class="lifecycle-item">Testing and production troubleshooting</span>
+          <span class="lifecycle-item">Web deployment and App Store / Google Play releases</span>
+          <span class="lifecycle-item">Ongoing improvements after launch</span>
+        </div>
+      </div>
+    </section>
+
     <section id="about" class="section">
       <div class="container about-layout">
         <div class="about-photo">
@@ -903,6 +968,7 @@
           <p>I've been building software for more than 25 years, working in environments ranging from Silicon Valley startups to large international companies.</p>
           <p>What I've always enjoyed most isn't technology for its own sake. It's finding something that's frustrating, repetitive, or unnecessarily complicated and making it easier.</p>
           <p>I like software that has a clear purpose: helping a customer place an order without making a phone call, giving an employee the information they need while they're on the road, keeping everyone updated without another round of emails, or turning paperwork and repetitive administrative work into a straightforward online process.</p>
+          <p>On most projects I work across the whole lifecycle — understanding the business process, designing the workflow, building the mobile or web interfaces, structuring the data behind them, connecting outside services, testing the finished system, and getting it into production. That means fewer handoffs and fewer things that fall through the cracks.</p>
           <p>I also believe business software should stay as simple as the problem allows. My goal isn't to introduce more technology into your business. It's to use the right amount of technology to save time, reduce friction, and make the work easier for the people actually using it.</p>
 
           <div class="detail-line">
@@ -966,6 +1032,7 @@
                 <span class="tag">Reviews &amp; Ratings</span>
                 <span class="tag">Customer &amp; Provider Interfaces</span>
               </div>
+              <div class="my-role"><strong>My role:</strong> Founder and end-to-end developer — product and workflow design, web development, database architecture, customer and provider experiences, payments and integrations, testing, deployment, and ongoing product development.</div>
               <div class="cta-row" style="margin-top:20px;">
                 <a class="button primary" href="https://myindiepro.com" target="_blank" rel="noopener">View Homepage ↗</a>
               </div>
@@ -1018,6 +1085,7 @@
                 <span class="tag">Administrative Portal</span>
                 <span class="tag">Report Delivery</span>
               </div>
+              <div class="my-role"><strong>My role:</strong> End-to-end development of both the customer mobile application and the administrative web portal — workflow and database design, implementation, testing, deployment, and mobile app distribution.</div>
 
             </div>
           </article>
@@ -1053,6 +1121,7 @@
                 <span class="tag">Payments</span>
                 <span class="tag">Technician Workflow</span>
               </div>
+              <div class="my-role"><strong>My role:</strong> Took an early prototype through production development — integrating the live database, realtime job workflows, customer payments, technician payouts, backend payment processing, and mobile app distribution.</div>
             </div>
           </article>
 
@@ -1086,6 +1155,7 @@
                 <span class="tag">Route-Based Work</span>
                 <span class="tag">Mobile Field Tools</span>
               </div>
+              <div class="my-role"><strong>My role:</strong> Led a four-developer rebuild of the legacy mobile application — working with product, QA, stakeholders, and junior developers to define requirements, reproduce undocumented legacy behavior, improve maintainability, test releases, and deliver the production iOS and Android application. Client organizations included Tide Cleaners.</div>
             </div>
           </article>
         </div>
@@ -1104,7 +1174,7 @@
             <div class="mini-thumb"><img src="index_files/other/greenzone.png" alt="FitRoutine / GreenZone screenshot" onclick="openLightbox(this.src)"></div>
             <div class="mini-body">
               <h3>FitRoutine / GreenZone <span class="mini-date">2025</span></h3>
-              <p>Wellness planning app that gave users a simple way to organize routines, habits, and personalized guidance around their goals.</p>
+              <p>Implemented personalized wellness planning features, managed multiple App Store releases, and built a web-based administration portal for managing custom user content and settings.</p>
               <a class="mini-card-link" href="https://apps.apple.com/us/app/fitroutine-wellness-planner/id6741724873" target="_blank" rel="noopener">App Store ↗</a>
             </div>
           </article>
@@ -1113,7 +1183,7 @@
             <div class="mini-thumb"><img src="index_files/other/players-pal.png" alt="Players Pal screenshot" onclick="openLightbox(this.src)"></div>
             <div class="mini-body">
               <h3>Players Pal <span class="mini-date">2025</span></h3>
-              <p>Casino rewards and engagement app designed to give members a simpler way to find offers, redeem perks, and manage ongoing loyalty activity.</p>
+              <p>Added rewards and directory functionality to an existing casino engagement application and managed multiple App Store releases.</p>
               <a class="mini-card-link" href="https://apps.apple.com/us/app/players-pal/id6443823691" target="_blank" rel="noopener">App Store ↗</a>
             </div>
           </article>
@@ -1122,7 +1192,7 @@
             <div class="mini-thumb"><img src="index_files/other/truecoach.png" alt="TrueCoach screenshot" onclick="openLightbox(this.src)"></div>
             <div class="mini-body">
               <h3>TrueCoach <span class="mini-date">2023–2024</span></h3>
-              <p>Fitness coaching platform helping coaches and clients manage programs, communication, and progress without a manual back-and-forth process.</p>
+              <p>Led a four-developer mobile team through several major releases, including coach/client messaging, wearable-device data integration, automated regression testing, and production issue resolution.</p>
               <a class="mini-card-link" href="https://apps.apple.com/us/app/truecoach/id1439127794" target="_blank" rel="noopener">App Store ↗</a>
             </div>
           </article>
@@ -1131,7 +1201,7 @@
             <div class="mini-thumb"><img src="index_files/other/marianatek.png" alt="MarianaTek screenshot" onclick="openLightbox(this.src)"></div>
             <div class="mini-body">
               <h3>MarianaTek <span class="mini-date">2021–2023</span></h3>
-              <p>White-labeled fitness studio software for booking, billing, and scheduling across a large network of client businesses.</p>
+              <p>Worked within a five-developer mobile team on booking, billing, and scheduling features — including pair programming, production troubleshooting, and close collaboration with design on pixel-accurate interfaces.</p>
               <a class="mini-card-link" href="https://apps.apple.com/us/app/barrys/id1389503012" target="_blank" rel="noopener">Example app ↗</a>
             </div>
           </article>
@@ -1140,7 +1210,7 @@
             <div class="mini-thumb"><img src="index_files/other/zingfit.png" alt="ZingFit screenshot" onclick="openLightbox(this.src)"></div>
             <div class="mini-body">
               <h3>ZingFit <span class="mini-date">2016–2023</span></h3>
-              <p>Custom-branded scheduling and member-management software for fitness businesses that needed a repeatable, scalable client experience.</p>
+              <p>Architected mobile build and release automation for hundreds of branded applications and troubleshot white-label push-notification delivery from backend infrastructure through users' devices.</p>
               <a class="mini-card-link" href="https://apps.apple.com/us/app/off-duty-pilates/id6755767474" target="_blank" rel="noopener">Example app ↗</a>
             </div>
           </article>
@@ -1149,7 +1219,7 @@
             <div class="mini-thumb"><img src="index_files/other/fluid-running.png" alt="Fluid Running screenshot" onclick="openLightbox(this.src)"></div>
             <div class="mini-body">
               <h3>Fluid Running</h3>
-              <p>Instructor-led aquatic workout software that simplified access to media, sessions, and guided fitness content on mobile devices.</p>
+              <p>Redesigned the mobile media experience, added player functionality, and integrated playback with device controls.</p>
               <a class="mini-card-link" href="https://apps.apple.com/us/app/fluid-running/id1377251019" target="_blank" rel="noopener">App Store ↗</a>
             </div>
           </article>
@@ -1158,7 +1228,7 @@
             <div class="mini-thumb"><img src="index_files/other/pocket-pushkah.png" alt="Pocket Pushkah screenshot" onclick="openLightbox(this.src)"></div>
             <div class="mini-body">
               <h3>Pocket Pushkah</h3>
-              <p>Branded donation and charity app used by organizations that needed a repeatable digital giving experience across multiple audiences.</p>
+              <p>Developed and maintained a white-labeled mobile donation platform customized and released for multiple charitable organizations.</p>
               <a class="mini-card-link" href="https://apps.apple.com/us/app/mytzedakah-pushka-chabad-ns/id1506259784" target="_blank" rel="noopener">App Store ↗</a>
             </div>
           </article>
@@ -1166,13 +1236,13 @@
           <article class="mini-card">
             <div class="mini-thumb"><img src="index_files/other/grower-analytics.png" alt="Grower Analytics screenshot" onclick="openLightbox(this.src)"></div>
             <h3>Grower Analytics</h3>
-            <p>Data and reporting platform for growers who needed a clearer way to manage crop and yield information across multiple sites.</p>
+            <p>Built and modernized agricultural analytics features including large-data filtering, reporting, imports and exports, database optimization, and migration of legacy application functionality.</p>
           </article>
 
           <article class="mini-card">
             <div class="mini-thumb"><img src="index_files/other/harmony-designs.png" alt="Harmony Designs screenshot" onclick="openLightbox(this.src)"></div>
             <h3>Harmony Designs</h3>
-            <p>E-commerce and order-management system for a custom goods business that needed a clearer way to manage personalized orders and payments.</p>
+            <p>Built customer-facing product customization and ordering tools, including live personalized-product previews, online payments, and conversion-focused improvements to the purchasing experience.</p>
           </article>
         </div>
       </div>
